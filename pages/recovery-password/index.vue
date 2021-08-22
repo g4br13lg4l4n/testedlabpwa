@@ -17,9 +17,9 @@
             <el-form-item label="Correo" prop="email">
               <el-input type="text" v-model="form.email"></el-input>
             </el-form-item>
-            <el-button class="btn-blue rounded-full" @click="submitForm('form')">Enviar</el-button>
+            <el-button class="btn-blue rounded-full" @click="submitForm('form')" round>Enviar</el-button>
           </el-form>
-          <el-button class="btn-blue" @click="$router.push('/')" v-if="flag">Aceptar</el-button>
+          <el-button class="btn-blue" @click="$router.push('/')" v-if="flag" round>Aceptar</el-button>
         </div>
       </el-col>
     </el-row>

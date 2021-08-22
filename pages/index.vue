@@ -18,7 +18,7 @@
             <el-form-item label=" " prop="terms" class="mb-2">
               <el-checkbox v-model="form.terms">Acepto términos y condiciones</el-checkbox>
             </el-form-item>
-            <el-button class="btn-blue rounded-full" @click="submitForm('form')">Iniciar sesión</el-button>
+            <el-button class="btn-blue rounded-full" @click="submitForm('form')" round>Iniciar sesión</el-button>
           </el-form>
           <nuxt-link to="/recovery-password" class="text-center">Olvidé mi contraseña</nuxt-link>
         </div>
