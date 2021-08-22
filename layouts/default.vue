@@ -9,6 +9,7 @@ export default {
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 /*GENERAL*/
 html,
 body {
@@ -341,5 +342,45 @@ input.check {
 .el-tag--danger {
   background-color: #eb3232 !important;
   border-color: #eb3232 !important;
+}
+
+.title-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.333721px;
+  color: #222B45;
+}
+
+.text-gray {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.233605px;
+  color: #6B779A;
+}
+
+.title-list-test {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.365217px;
+  color: #000000;
+}
+.number-test-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.517391px;
+  color: #222B45;
 }
 </style>

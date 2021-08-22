@@ -5,7 +5,7 @@
         <img src="../assets/img/bro.png" alt="Tested Lab" />
       </el-col>
       <el-col :span="12" :xs="24" :sm="24" :lg="12" class="position-form">
-        <img src="../assets/img/logo.png" alt="Tested Lab">
+        <img src="../assets/img/logo2.svg" alt="Tested Lab">
         <div class="content-form mt-1">
           <h2 class="text-center">Iniciar sesión</h2>
           <el-form ref="form" :model="form" :rules="rules">
