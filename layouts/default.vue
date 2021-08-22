@@ -45,7 +45,7 @@ button {
 }
 
 .bg-blue-login {
-  background: #F8F8FA;
+  background: #3E64FF;
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -143,7 +143,7 @@ input.check {
 }
 
 .btn-blue {
-  background: #1565d8;
+  background: #3E64FF;
   width: 100%;
   height: 50px;
   border: 0;
@@ -158,7 +158,7 @@ input.check {
 }
 
 .btn-blue-2 {
-  background: #1565d8;
+  background: #3E64FF;
   width: 100%;
   height: 35px;
   border: 0;
