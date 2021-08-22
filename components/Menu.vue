@@ -1,58 +1,23 @@
 <template>
-  <div>
-    <el-menu
-      :default-active="activeIndex"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-    >
-      <el-menu-item index="1">Processing Center</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">Workspace</template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">item four</template>
-          <el-menu-item index="2-4-1">item one</el-menu-item>
-          <el-menu-item index="2-4-2">item two</el-menu-item>
-          <el-menu-item index="2-4-3">item three</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="3" disabled>Info</el-menu-item>
-      <el-menu-item index="4"
-        ><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item
-      >
-    </el-menu>
-    <div class="line"></div>
-    <el-menu
-      :default-active="activeIndex2"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b"
-    >
-      <el-menu-item index="1">Processing Center</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">Workspace</template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">item four</template>
-          <el-menu-item index="2-4-1">item one</el-menu-item>
-          <el-menu-item index="2-4-2">item two</el-menu-item>
-          <el-menu-item index="2-4-3">item three</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="3" disabled>Info</el-menu-item>
-      <el-menu-item index="4"
-        ><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item
-      >
-    </el-menu>
-  </div>
+  <nav class="menu mt-2">
+    <ul class="flex">
+      <li>
+        <nuxt-link  to="/home" class="item-menu">
+          <span>Inicio</span>
+        </nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/profile" class="item-menu">
+          Perfil
+        </nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/contact" class="item-menu">
+          Contacto
+        </nuxt-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -70,3 +35,27 @@ export default {
   },
 };
 </script>
+
+<style>
+  nav.menu {
+    height: 35px;
+  }
+  a.item-menu {
+    height: 100%;
+    color: #6B779A;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  nav.menu a.nuxt-link-active {
+    background-color: #3E64FF;
+    border: 1px solid #3E64FF;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 26px;
+  }
+</style>
