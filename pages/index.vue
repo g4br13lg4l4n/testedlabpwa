@@ -6,7 +6,7 @@
       </el-col>
       <el-col :span="12" :xs="24" :sm="24" :lg="12" class="position-form">
         <img src="../assets/img/logo.png" alt="Tested Lab">
-        <div class="content-form mt-2">
+        <div class="content-form mt-1">
           <h2 class="text-center">Iniciar sesión</h2>
           <el-form ref="form" :model="form" :rules="rules">
             <el-form-item label="Correo" prop="email">
@@ -15,12 +15,12 @@
             <el-form-item label="Contraseña" prop="password">
               <el-input type="password" autocomplete="off" v-model="form.password"></el-input>
             </el-form-item>
-            <el-form-item label=" " prop="terms">
+            <el-form-item label=" " prop="terms" class="mb-2">
               <el-checkbox v-model="form.terms">Acepto términos y condiciones</el-checkbox>
             </el-form-item>
-            <br>
             <el-button class="btn-blue" @click="submitForm('form')">Iniciar sesión</el-button>
           </el-form>
+          <nuxt-link to="/recovery-password" class="text-center">Olvidé mi contraseña</nuxt-link>
         </div>
       </el-col>
     </el-row>
