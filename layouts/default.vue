@@ -25,6 +25,10 @@ html {
   position: relative;
 }
 
+p {
+  color: #222222;
+}
+
 body {
   background: #fff;
 }
@@ -46,7 +50,7 @@ button {
 }
 
 .bg-blue-login {
-  background: #3E64FF;
+  background: #F8F8FA;
   position: relative;
   min-height: 100vh;
   display: flex;

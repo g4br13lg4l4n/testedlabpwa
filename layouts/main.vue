@@ -16,6 +16,23 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+<style>
+.title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 41px;
+  letter-spacing: 0.300349px;
+  color: #0360AD;
+}
+.sub-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.300349px;
+  color: #222B45;
+}
+</style>
