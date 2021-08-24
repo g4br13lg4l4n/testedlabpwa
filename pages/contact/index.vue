@@ -1,8 +1,47 @@
 <template>
   <div class="mt-1">
     <h1 class="title">Contacto</h1>
-    <p class="sub-title mb-0.5 mt-1 mb-1">¿Necesitas ayuda sobre la App o tus datos?</p>
-    <p>Comunicate con nosotros</p>
+    <p class="sub-title mb-0.5 mt-1 mb-1">¿Necesitas agendar una cita?</p>
+    <p class="mb-1">Comunicate con nosotros</p>
+    <div class="flex items-center mr-4 my-3">
+      <div class="card-contact flex justify-between items-center">
+        <div>
+          <img src="../../assets/img/whats.svg" alt="Whatssap">
+        </div>
+        <div>
+          <p class="title-test">WhatsApp</p>
+          <p class="category-test">Chatea con nosotros</p>
+        </div>
+        <a href="#" class="bg-white row-select">
+          <img src="../../assets/img/row.svg" alt="row" />
+        </a>
+      </div>
+      <div class="card-contact flex justify-between items-center">
+        <div>
+          <img src="../../assets/img/contact.svg" alt="Contacto">
+        </div>
+        <div>
+          <p class="title-test w-40">Línea de atención al cliente</p>
+          <p class="category-test">Llámanos al 55 8765 4321</p>
+        </div>
+        <a href="#" class="bg-white row-select">
+          <img src="../../assets/img/row.svg" alt="row" />
+        </a>
+      </div>
+    </div>
+    <p class="sub-title mb-0.5 mt-2 mb-1">¿Necesitas ayuda sobre la App o tus datos?</p>
+    <div class="card-contact flex justify-between items-center w-60">
+        <div>
+          <img src="../../assets/img/contact.svg" alt="Contacto">
+        </div>
+        <div>
+          <p class="title-test w-40">Línea de atención al cliente</p>
+          <p class="category-test">Llámanos al 55 8765 4321</p>
+        </div>
+        <a href="#" class="bg-white row-select">
+          <img src="../../assets/img/row.svg" alt="row" />
+        </a>
+      </div>
   </div>
 </template>
 
@@ -12,3 +51,13 @@ export default {
   name: "contact"
 };
 </script>
+
+<style>
+  .card-contact { 
+    background: rgba(107, 119, 154, 0.05);
+    border-radius: 20px;
+    min-width: 320px;
+    padding: 20px;
+    margin: 0 12px;
+  }
+</style>

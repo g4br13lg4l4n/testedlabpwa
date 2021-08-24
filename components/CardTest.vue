@@ -50,10 +50,5 @@ export default {
   letter-spacing: 0.233605px;
   color: #6b779a;
 }
-.row-select {
-    background: #FFFFFF;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    padding: 10px;
-}
+
 </style>

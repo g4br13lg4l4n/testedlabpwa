@@ -46,10 +46,13 @@ export default {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  a.item-menu:first-child{
+    margin-left: 0;
   }
   nav.menu a.nuxt-link-active {
     background-color: #3E64FF;

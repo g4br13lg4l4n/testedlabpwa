@@ -2,7 +2,7 @@
   <div class="mt-1">
     <h1 class="title">Perfil</h1>
     <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96">
-      <el-button round class="float-right" @click="dialogFormVisible = true">Editar</el-button>
+      <el-button round class="float-right round-primary" size="small" @click="dialogFormVisible = true">Editar</el-button>
       <p class="sub-title mb-0.5">Alejandra Hernández López</p>
       <p>
         <i class="el-icon-date"></i>

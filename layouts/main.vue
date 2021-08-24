@@ -35,4 +35,14 @@
   letter-spacing: 0.300349px;
   color: #222B45;
 }
+.row-select {
+  background: #FFFFFF;
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 10px;
+}
+.round-primary {
+  border: 1px solid #3E64FF !important;
+  color: #3E64FF;
+}
 </style>
