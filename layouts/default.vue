@@ -5,11 +5,11 @@
 </template>
 <script>
 export default {
-  name: 'default'
-}
+  name: "default",
+};
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 /*GENERAL*/
 html,
 body {
@@ -50,7 +50,7 @@ button {
 }
 
 .bg-blue-login {
-  background: #F8F8FA;
+  background: #f8f8fa;
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -70,9 +70,9 @@ button {
   max-width: 350px;
 }
 
-.content-form h2 {
+h2 {
   font-size: 24px;
-  color: #0360AD;
+  color: #0360ad;
   font-weight: 700;
 }
 
@@ -148,7 +148,7 @@ input.check {
 }
 
 .btn-blue {
-  background: #3E64FF;
+  background: #3e64ff;
   width: 100%;
   height: 50px;
   border: 0;
@@ -163,7 +163,7 @@ input.check {
 }
 
 .btn-blue-2 {
-  background: #3E64FF;
+  background: #3e64ff;
   width: 100%;
   height: 35px;
   border: 0;
@@ -294,15 +294,12 @@ input.check {
 .z-1 {
   z-index: 1;
 }
-.text-center {
-  text-align: center;
-}
 .capitalize {
   text-transform: capitalize;
 }
 /* END GENERAL */
 
-.el-table th>.cell {
+.el-table th > .cell {
   font-weight: 400;
 }
 
@@ -355,7 +352,7 @@ input.check {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.333721px;
-  color: #222B45;
+  color: #222b45;
 }
 
 .text-gray {
@@ -365,7 +362,7 @@ input.check {
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.233605px;
-  color: #6B779A;
+  color: #6b779a;
 }
 
 .title-list-test {
@@ -385,6 +382,38 @@ input.check {
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.517391px;
-  color: #222B45;
+  color: #222b45;
+}
+@media (max-width: 480px) {
+  .flex-mobile {
+    display: flex;
+    align-items: center;
+  }
+  .flex-none-mobile {
+    display: block;
+  }
+  .diplay-none-mobile {
+    display: none;
+  }
+  .position-form {
+    margin-top: 2em;
+  }
+  .position-form .flex-mobile img {
+    width: 30%;
+    margin-right: 12px;
+  }
+  .position-form .flex-mobile {
+    margin-bottom: 2em;
+  }
+  .show-mobile {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 320px) {
+  .position-form {
+    padding: 0 10px;
+  }
 }
 </style>

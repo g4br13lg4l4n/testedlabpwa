@@ -1,13 +1,16 @@
 <template>
   <div class="container-fluid">
-    <el-row class="flex">
-      <el-col :span="12" :xs="24" :sm="24" :lg="12" class="bg-blue-login">
-        <img src="../assets/img/bro.png" alt="Tested Lab" />
+    <el-row class="flex flex-none-mobile">
+      <el-col :span="12" :xs="24" :sm="12" :lg="12" class="bg-blue-login diplay-none-mobile">
+        <img src="../assets/img/bro.png" alt="Tested Lab"/>
       </el-col>
-      <el-col :span="12" :xs="24" :sm="24" :lg="12" class="position-form">
-        <img src="../assets/img/logo2.svg" alt="Tested Lab">
-        <div class="content-form mt-1">
-          <h2 class="text-center">Iniciar sesión</h2>
+      <el-col :span="12" :xs="24" :sm="12" :lg="12" class="position-form">
+        <div class="flex-mobile">
+          <img src="../assets/img/logo2.svg" alt="Tested Lab">
+          <h2 class="text-center mt-1">Iniciar sesión</h2>
+        </div>
+        <img src="../assets/img/bro.png" alt="Tested Lab" class="hidden show-mobile mb-2"/>
+        <div class="content-form mt-2">
           <el-form ref="form" :model="form" :rules="rules">
             <el-form-item label="Correo" prop="email">
               <el-input type="text" v-model="form.email"></el-input>
@@ -20,7 +23,7 @@
             </el-form-item>
             <el-button class="btn-blue rounded-full" @click="submitForm('form')" round>Iniciar sesión</el-button>
           </el-form>
-          <nuxt-link to="/recovery-password" class="text-center">Olvidé mi contraseña</nuxt-link>
+          <nuxt-link to="/recovery-password" class="text-center mb-2">Olvidé mi contraseña</nuxt-link>
         </div>
       </el-col>
     </el-row>
