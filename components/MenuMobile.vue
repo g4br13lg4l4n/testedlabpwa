@@ -1,6 +1,9 @@
 <template>
   <nav>
     <div class="mobile-menu">
+      <div class="logo-menu">
+        <img src="../assets/img/logo-mobile.svg" alt="TestedLab">
+      </div>
       <div class="circle" :class="{ expand: isOpen }"></div>
       <div class="menu">
         <ul>
@@ -95,5 +98,10 @@ export default {
   position: absolute;
   left: calc(50% - 69px);
   top: 0;
+}
+.logo-menu {
+  position: absolute;
+  top: 18px;
+  left: 12px;
 }
 </style>
