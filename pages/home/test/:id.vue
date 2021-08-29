@@ -5,22 +5,22 @@
             <el-button round class="round-primary"><i class="el-icon-download"></i> Descargar</el-button>
         </div>
         <div class="mt-1 mb-2">
-            <h1 class="title">Exámenes</h1>
+            <h1 class="title">Resultados del test</h1>
             <h2 class="sub-title mt-1">Datos del paciente</h2>
             <el-row class="mt-2.5">
-                <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                <el-col :span="12" :xs="12" :sm="6" :lg="6">
                     <p class="text-gray mb-1.5">Folio:</p>
                     <p class="sub-title">210712209</p>
                 </el-col>
-                <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                <el-col :span="12" :xs="12" :sm="6" :lg="6">
                     <p class="text-gray mb-1.5">Sexo:</p>
                     <p class="sub-title">Masculino</p>
                 </el-col>
-                <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                <el-col :span="12" :xs="12" :sm="6" :lg="6">
                     <p class="text-gray mb-1.5">Fecha de muestreo:</p>
                     <p class="sub-title">12/08/21</p>
                 </el-col>
-                <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                <el-col :span="12" :xs="12" :sm="6" :lg="6">
                     <p class="text-gray mb-1.5">Fecha de reporte:</p>
                     <p class="sub-title">12/08/21</p>
                 </el-col>
@@ -30,7 +30,7 @@
         <h2 class="sub-title my-8">Datos del examen</h2>
         <el-row class="mt-2.5">
             <el-col :span="12" :xs="24" :sm="6" :lg="6">
-                <img src="../../../assets/img/qr.png" alt="QR" width="90%">
+                <img src="../../../assets/img/qr.png" alt="QR" width="90%" class="m0-auto">
             </el-col>
             <el-col :span="12" :xs="24" :sm="6" :lg="18">
                 <p class="sub-title mb-1">Detección cualitativa de Antígeno del Virus SARS-CoV-2</p>

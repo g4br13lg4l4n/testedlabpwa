@@ -14,22 +14,22 @@
               class="logo-mobile-center"
             />
           </li>
-          <li :class="{ animate: isOpen }">
+          <li :class="{ animate: isOpen }" @click="open">
             <span
               ><i class="el-icon-s-home"></i>
-              <nuxt-link to="home">Inicio</nuxt-link>
+              <nuxt-link to="/home">Inicio</nuxt-link>
             </span>
           </li>
-          <li :class="{ animate: isOpen }">
+          <li :class="{ animate: isOpen }" @click="open">
             <span
               ><i class="el-icon-user"></i>
-              <nuxt-link to="nosotros">Perfil</nuxt-link>
+              <nuxt-link to="/profile">Perfil</nuxt-link>
             </span>
           </li>
-          <li :class="{ animate: isOpen }">
+          <li :class="{ animate: isOpen }" @click="open">
             <span
               ><i class="el-icon-service"></i>
-              <nuxt-link to="galeria">Contacto</nuxt-link>
+              <nuxt-link to="/contact">Contacto</nuxt-link>
             </span>
           </li>
           <li :class="{ animate: isOpen }">
@@ -68,6 +68,7 @@ export default {
       this.$router.push("/");
     },
     open() {
+      console.log('this.isOpen ---->', this.isOpen);
       this.isOpen = !this.isOpen;
       if (this.isOpen === true) {
         this.burguerX = "collapse";

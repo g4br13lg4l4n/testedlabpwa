@@ -409,6 +409,9 @@ input.check {
     display: block;
     margin: 0 auto;
   }
+  .card-profile {
+    width: 100%;
+  }
 }
 @media (max-width: 320px) {
   .position-form {

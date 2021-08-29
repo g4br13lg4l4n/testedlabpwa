@@ -1,7 +1,7 @@
 <template>
   <div class="mt-1">
     <h1 class="title">Perfil</h1>
-    <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96">
+    <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
       <el-button round class="float-right round-primary" size="small" @click="dialogFormVisible = true">Editar</el-button>
       <p class="sub-title mb-0.5">Alejandra Hernández López</p>
       <p>
@@ -17,7 +17,7 @@
         5512345678
       </p>
     </div>
-    <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96">
+    <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
       <p class="sub-title mb-0.5">Dirección</p>
       <p>
         Calle Olmo Col. Adolfo López Mateos CP: 70123 Delegación Vasco de

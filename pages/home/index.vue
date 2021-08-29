@@ -71,4 +71,14 @@ export default {
     border-radius: 20px;
     width: 273px;
   }
+  @media (max-width: 480px) {
+    .options-test {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .options-test button {
+      width: 50%;
+    }
+  }
 </style>
