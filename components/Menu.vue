@@ -8,13 +8,12 @@
       </li>
       <li>
         <nuxt-link to="/profile" class="item-menu">
-          <i class="el-icon-user"></i> Perfil
+          <span><i class="el-icon-user"></i>Perfil</span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/contact" class="item-menu">
-          <i class="el-icon-service"></i>
-          Contacto
+          <span><i class="el-icon-service"></i>Contacto</span>
         </nuxt-link>
       </li>
     </ul>
@@ -29,7 +28,6 @@
 export default {
   methods: {
     exit() {
-      console.log('salir ---->')
       this.$router.push('/');
     },
   },

@@ -26,10 +26,10 @@
     </div>
     <el-dialog title="Shipping address" :visible.sync="dialogFormVisible">
       <el-form :model="form">
-        <el-form-item label="Promotion name" :label-width="formLabelWidth">
+        <el-form-item label="Promotion name">
           <el-input v-model="form.name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="Zones" :label-width="formLabelWidth">
+        <el-form-item label="Zones">
           <el-select v-model="form.region" placeholder="Please select a zone">
             <el-option label="Zone No.1" value="shanghai"></el-option>
             <el-option label="Zone No.2" value="beijing"></el-option>
