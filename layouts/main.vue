@@ -222,6 +222,7 @@ div.menu li.animate:nth-of-type(5){
 	transition-delay: 0.12s;		
 }
 div.menu li.animate:nth-of-type(6){
+	z-index: 2;
 	top:470px;
 	transition-delay: 0.15s;				
 }

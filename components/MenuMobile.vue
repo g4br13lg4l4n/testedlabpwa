@@ -33,6 +33,9 @@
             </span>
           </li>
           <li :class="{ animate: isOpen }">
+            <el-divider></el-divider>
+          </li>
+          <li :class="{ animate: isOpen }">
             <button @click="exit" class="exit-btn flex close-sesion-mobile">
               <img src="../assets/img/logout.svg" alt="salir" class="mr-1" />
               <span>Cerrar sesión</span>
