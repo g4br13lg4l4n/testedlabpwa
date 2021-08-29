@@ -9,7 +9,7 @@
           <img src="../../assets/img/logo2.svg" alt="Tested Lab" />
           <h2 class="text-center">Recuperar contraseña</h2>
         </div>
-        <img src="../../assets/img/img-password.png" alt="Tested Lab" class="hidden show-mobile mb-2"/>
+        <img src="../../assets/img/img-password.png" alt="Tested Lab" class="hidden show-mobile mb-2 w-10/12"/>
         <div class="content-form mt-2">
           <p class="text-center mt-1" v-if="!flag">
             Escribe tu correo electrónico con el que estés dado de alta en

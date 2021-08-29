@@ -407,7 +407,6 @@ input.check {
   }
   .show-mobile {
     display: block;
-    width: 80%;
     margin: 0 auto;
   }
 }

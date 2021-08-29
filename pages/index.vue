@@ -9,7 +9,7 @@
           <img src="../assets/img/logo2.svg" alt="Tested Lab">
           <h2 class="text-center mt-1">Iniciar sesión</h2>
         </div>
-        <img src="../assets/img/bro.png" alt="Tested Lab" class="hidden show-mobile mb-2"/>
+        <img src="../assets/img/bro.png" alt="Tested Lab" class="hidden show-mobile mb-2 w-10/12"/>
         <div class="content-form mt-2">
           <el-form ref="form" :model="form" :rules="rules">
             <el-form-item label="Correo" prop="email">

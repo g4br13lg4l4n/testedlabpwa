@@ -1,5 +1,6 @@
 <template>
   <div class="mt-1">
+    <ResumenMobile class="hidden show-mobile "/>
     <h1 class="title">Exámenes</h1>
     <h2 class="sub-title mt-1">Sobre tus exámenes</h2>
     <p class="text-gray mt-1">

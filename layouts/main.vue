@@ -7,7 +7,7 @@
       <el-container>
         <el-header style="text-align: right; font-size: 12px">
           <Menu class="diplay-none-mobile" />
-          <Menu-Mobile class="hidden show-mobile"/>
+          <Menu-Mobile class="hidden show-mobile w-10/12"/>
         </el-header>
         <el-main>
           <Nuxt />
@@ -47,38 +47,6 @@
   color: #3E64FF;
 }
 
-@media (max-width: 480px) {
-  .flex-mobile {
-    display: flex;
-    align-items: center;
-  }
-  .flex-none-mobile {
-    display: block;
-  }
-  .diplay-none-mobile {
-    display: none;
-  }
-  .position-form {
-    margin-top: 2em;
-  }
-  .position-form .flex-mobile img {
-    width: 30%;
-    margin-right: 12px;
-  }
-  .position-form .flex-mobile {
-    margin-bottom: 2em;
-  }
-  .show-mobile {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-@media (max-width: 320px) {
-  .position-form {
-    padding: 0 10px;
-  }
-}
 
 /*
     Menú
@@ -256,5 +224,14 @@ div.menu li.animate:nth-of-type(5){
 div.menu li.animate:nth-of-type(6){
 	top:470px;
 	transition-delay: 0.15s;				
+}
+.m0-auto {
+	margin: 0 auto;
+}
+@media (max-width: 480px) {
+  .sub-title {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
 }
 </style>
