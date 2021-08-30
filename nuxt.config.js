@@ -99,7 +99,6 @@ export default {
       name: 'Tested Lab',
       lang: 'es',
       useWebmanifestExtension: false,
-      start_url: '/',
       theme_color: '#fff',
       display: 'standalone',
       background_color: '#fff'
