@@ -1,24 +1,20 @@
 <template>
   <div class="card-test flex justify-between items-center mx-4 my-3">
     <div>
-      <p class="title-test">Test COVID-19</p>
+      <p class="title-test">Prueba {{ test.cveEstudio }}</p>
       <p class="date-test">
-        <span>Fecha de muestreo: </span> <strong>12/08/21</strong>
+        <span>Fecha de muestreo: </span> <strong>{{ test.fechaSolicitud | date }}</strong>
       </p>
-      <p class="category-test">Categoría: Test</p>
+      <p class="category-test">Descripción: {{ test.descripcion }}</p>
     </div>
-    <nuxt-link :to="id" class="bg-white row-select">
+    <nuxt-link :to="'home/test/' +  test.folio" class="bg-white row-select">
       <img src="../assets/img/row.svg" alt="row" />
     </nuxt-link>
   </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      id: "home/test/1",
-    };
-  },
+  props: ['test']
 };
 </script>
 

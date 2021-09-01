@@ -25,29 +25,34 @@
     </el-form>
     <div>
       <div class="options-test">
-        <el-button type="primary" @click="onSubmit" round>Completados</el-button>
-        <el-button type="info" @click="onSubmit" round>Pendientes</el-button>
+        <el-button :type="flagTest === 'completed' ? 'primary' : 'info'" @click="listTest('completed')" round>Completados</el-button>
+        <el-button :type="flagTest === 'no-completed' ? 'primary' : 'info'" @click="listTest('no-completed')" round>Pendientes</el-button>
       </div>
-      <div class="mt-2 container-test flex content-between flex-wrap">
-        <CardTest />
-        <CardTest />
-        <CardTest />
-        <CardTest />
-        <CardTest />
+      <div class="mt-2 container-test flex content-between flex-wrap" v-if="flagTest === 'completed'">
+        <card-test v-for="test in details.estudiosCompletos" :key="test.folio" :test="test"/>
       </div>
+      <div class="mt-2 container-test flex content-between flex-wrap" v-else>
+          <card-test v-for="test in details.estudiosPendiente" :key="test.folio" :test="test"/>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+import CardTest from '../../components/CardTest';
 export default {
+  components: { 
+    CardTest
+  },
   layout: "main",
   data() {
     return {
+      flagTest: 'completed',
       form: {
-        filter: ""
+        filter: ''
       },
+      cardTestData: [],
       options: [
         {
           value: "Test COVID-19",
@@ -63,6 +68,9 @@ export default {
     this.$store.dispatch('get_details', this.auth.user.cvePaciente);
   },
   methods: {
+    listTest(flag) {
+      this.flagTest = flag;
+    },
     onSubmit() {
       console.log("submit!");
     },
