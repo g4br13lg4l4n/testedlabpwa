@@ -49,6 +49,13 @@ export default {
   axios: {
     baseURL: config.production ? '': 'http://cfm.fredzuniga.opalstacked.com/cfm-api/api/v1/',
   },
+  /**
+  ** Router with auth 
+  */
+  router: {
+    middleware: ['auth']
+    // clearValidationErrors
+  },
 
   /**
    * Auth Config 
