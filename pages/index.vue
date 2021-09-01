@@ -70,7 +70,7 @@ export default {
         if (valid) {
           this.$auth.loginWith('local', { data: this.form })
           .then(resp => {
-            this.$router.push('/home');
+            //this.$router.push('/home');
           })
           .catch(err => {
             console.log('error', err);

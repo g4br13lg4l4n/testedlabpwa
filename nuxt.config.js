@@ -64,14 +64,14 @@ export default {
     redirect: {
       login: '/',
       logout: '/',
-      home: 'home'
+      home: '/home'
     },
     strategies: {
       local: {
         endpoints: {
           login: { url: "login", method: "post", propertyName: 'token' },
           user: { url: "perfil", method: "get", propertyName: "user" },
-          logout: { url: "users/logout", method: "get" }
+          logout: { url: "logout/web", method: "post"}
         },
       }
     }

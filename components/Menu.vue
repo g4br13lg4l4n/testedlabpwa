@@ -28,7 +28,6 @@
 export default {
   methods: {
     exit() {
-      this.$router.push('/');
       this.$auth.logout();
     },
   },
