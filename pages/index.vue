@@ -76,7 +76,7 @@ export default {
             console.log('error', err);
             this.$message({
               showClose: true,
-              message: err.response.data.message,
+              message: err.response?.data?.message,
               type: 'error'
             })
           })

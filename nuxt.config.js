@@ -72,7 +72,7 @@ export default {
         endpoints: {
           login: { url: "login", method: "post", propertyName: 'token' },
           user: { url: "perfil", method: "get", propertyName: "user" },
-          logout: { url: "logout/web", method: "post"}
+          logout: { url: "logout/web", method: "get"}
         },
       }
     }

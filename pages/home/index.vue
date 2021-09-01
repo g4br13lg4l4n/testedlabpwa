@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   layout: "main",
   data() {
@@ -54,6 +55,12 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    ...mapGetters(['details', 'auth']),
+  },
+  mounted() {
+    this.$store.dispatch('get_details', this.auth.user.cvePaciente);
   },
   methods: {
     onSubmit() {

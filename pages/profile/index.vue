@@ -3,24 +3,24 @@
     <h1 class="title">Perfil</h1>
     <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
       <el-button round class="float-right round-primary" size="small" @click="formUpdate = true">Editar</el-button>
-      <p class="sub-title mb-0.5">{{ auth.user.nombre_completo }}</p>
+      <p class="sub-title mb-0.5">{{ auth.user.nombreCompleto }}</p>
       <p>
         <i class="el-icon-date"></i>
-        {{ auth.user.FECHA_NACIMIENTO | date}}
+        {{ auth.user.fechaNacimiento | date}}
       </p>
       <p>
         <i class="el-icon-message"></i>
-        {{ auth.user.EMAIL }}
+        {{ auth.user.email }}
       </p>
       <p>
         <i class="el-icon-mobile"></i>
-        {{ auth.user.CELULAR }}
+        {{ auth.user.celular }}
       </p>
     </div>
     <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
       <p class="sub-title mb-0.5">Dirección</p>
       <p>
-        {{ auth.user.DOMICILIO === '' ? 'Sin dirección registrada' : auth.user.DOMICILIO }}
+        {{ auth.user.domicilio === '' ? 'Sin dirección registrada' : auth.user.domicilio }}
       </p>
     </div>
     <el-dialog title="Editar datos" :visible.sync="formUpdate" center class="with-modal">
@@ -67,13 +67,13 @@ export default {
   },
   mounted() {
     let date = '';
-    if(this.auth?.user?.FECHA_NACIMIENTO && this.auth?.user?.FECHA_NACIMIENTO !== '') {
-      date = moment(this.auth?.user?.FECHA_NACIMIENTO, 'YYYY-MM-DD').format('DD/MMMM/YYYY');
+    if(this.auth?.user?.fechaNacimiento && this.auth?.user?.fechaNacimiento !== '') {
+      date = moment(this.auth?.user?.fechaNacimiento, 'YYYY-MM-DD').format('DD/MMMM/YYYY');
     }
     this.form = {
         date: date,
-        email: this.auth?.user?.EMAIL,
-        phone: this.auth?.user?.CELULAR,
+        email: this.auth?.user?.email,
+        phone: this.auth?.user?.celular,
       };
   },
   methods: {
@@ -86,6 +86,7 @@ export default {
       this.loading = true;
       this.$axios.put('perfil', data)
       .then(resp => {
+        this.$store.dispatch('get_profile');
         this.loading = false;
         this.formUpdate = false;
         this.$message({

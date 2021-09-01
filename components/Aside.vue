@@ -6,18 +6,18 @@
         <div class="perfil">
             <el-row class="mt-2">
                 <el-col :span="12" :xs="24" :sm="12" :lg="8" class="flex justify-center items-center">
-                    <img v-if="auth.user.SEXO === 'Femenino'" src="../assets/img/woman.png" alt="perfil femenino" class="w-2/3">
-                    <img v-if="auth.user.SEXO === 'Masculino'" src="../assets/img/man.png" alt="perfil masculino" class="w-2/3">
+                    <img v-if="auth.user.sexo === 'Femenino'" src="../assets/img/woman.png" alt="perfil femenino" class="w-2/3">
+                    <img v-if="auth.user.sexo === 'Masculino'" src="../assets/img/man.png" alt="perfil masculino" class="w-2/3">
                 </el-col>
                 <el-col :span="12" :xs="24" :sm="12" :lg="16">
-                    <p class="title-name">{{ auth.user.nombre_completo }}</p>
+                    <p class="title-name">{{ auth.user.nombreCompleto }}</p>
                     <p class="text-gray mt-1">{{ auth.user.edad }} años</p>
                 </el-col>
             </el-row>
             <div class="container-list-test mt-2">
                 <p class="title-list-test mb-1">Test realizados</p>
                 <div class="content-list-test mb-8">
-                    <CardCategory />
+                    <card-category v-for="category in details.categoriaEstudios" :key="category.cveEstudio" :category="category" />
                 </div>
             </div>
         </div>
@@ -26,9 +26,13 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import CardCategory from './CardCategory';
 export default {
+    components: {
+        CardCategory
+    },
     computed: {
-        ...mapGetters(["auth"]),
+        ...mapGetters(['auth', 'details']),
     }   
 }
 </script>
