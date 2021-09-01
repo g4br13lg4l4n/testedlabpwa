@@ -2,7 +2,7 @@
   <div class="mt-1">
     <h1 class="title">Perfil</h1>
     <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
-      <el-button round class="float-right round-primary" size="small" @click="dialogFormVisible = true">Editar</el-button>
+      <el-button round class="float-right round-primary" size="small" @click="formUpdate = true">Editar</el-button>
       <p class="sub-title mb-0.5">Alejandra Hernández López</p>
       <p>
         <i class="el-icon-date"></i>
@@ -24,23 +24,27 @@
         Quiroga CDMX
       </p>
     </div>
-    <el-dialog title="Shipping address" :visible.sync="dialogFormVisible">
+    <el-dialog title="Editar datos" :visible.sync="formUpdate" center class="with-modal">
       <el-form :model="form">
-        <el-form-item label="Promotion name">
-          <el-input v-model="form.name" autocomplete="off"></el-input>
+        <el-form-item label="Fecha de nacimiento">
+          <el-date-picker
+            class="picker-full morado-background"
+            v-model="form.date"
+            type="date"
+            format="dd/MM/yy"
+            placeholder="Fecha de nacimiento"
+            autocomplete="off">
+          </el-date-picker>
         </el-form-item>
-        <el-form-item label="Zones">
-          <el-select v-model="form.region" placeholder="Please select a zone">
-            <el-option label="Zone No.1" value="shanghai"></el-option>
-            <el-option label="Zone No.2" value="beijing"></el-option>
-          </el-select>
+        <el-form-item label="Correo">
+          <el-input v-model="form.email" autocomplete="off" class="morado-background"></el-input>
+        </el-form-item>
+        <el-form-item label="Teléfono">
+          <el-input v-model="form.phone" autocomplete="off" class="morado-background"></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false"
-          >Confirm</el-button
-        >
+        <el-button type="primary" @click="formUpdate = false" class="w-full btn-blue" round>Aceptar</el-button>
       </span>
     </el-dialog>
   </div>
@@ -52,7 +56,7 @@ export default {
   name: "profile",
   data() {
     return {
-      dialogFormVisible: false,
+      formUpdate: false,
       form: {}
     };
   },

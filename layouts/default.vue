@@ -150,7 +150,7 @@ input.check {
 .btn-blue {
   background: #3e64ff;
   width: 100%;
-  height: 50px;
+  height: 45px;
   border: 0;
   color: #fff !important;
   border-radius: 6px;
@@ -384,7 +384,37 @@ input.check {
   letter-spacing: 0.517391px;
   color: #222b45;
 }
+.with-modal {
+  width: 45em;
+  margin: 0 auto;
+}
+.el-dialog {
+  border-radius: .8em;
+}
+.picker-full {
+  width: 100% !important;
+}
+.morado-background .el-input__inner {
+  background: rgba(107, 119, 154, 0.05);
+  border-radius: 10px;
+  border: 0;
+  color: #222222;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0.266977px;
+}
+.morado-background .el-input__inner::placeholder {
+  color: #222222;
+}
+
 @media (max-width: 480px) {
+  .with-modal {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .el-dialog {
+    width: 95%;
+  }
   .flex-mobile {
     display: flex;
     align-items: center;
@@ -416,6 +446,13 @@ input.check {
 @media (max-width: 320px) {
   .position-form {
     padding: 0 10px;
+  }
+  .with-modal {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .el-dialog {
+    width: 95%;
   }
 }
 </style>
