@@ -47,7 +47,7 @@ export default {
   ],
 
   axios: {
-    baseURL: config.production ? '': 'http://localhost:3000/api/v1',
+    baseURL: config.production ? '': 'http://cfm.fredzuniga.opalstacked.com/cfm-api/api/v1/',
   },
 
   /**
@@ -62,8 +62,8 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: "users/auth", method: "post", propertyName: 'token' },
-          user: { url: "users/me", method: "get", propertyName: "user" },
+          login: { url: "login", method: "post", propertyName: 'token' },
+          user: { url: "perfil", method: "get", propertyName: "user" },
           logout: { url: "users/logout", method: "get" }
         },
       }
@@ -99,13 +99,13 @@ export default {
       name: 'Tested Lab',
       lang: 'es',
       useWebmanifestExtension: false,
+      start_url: '/',
       theme_color: '#fff',
       display: 'standalone',
       background_color: '#fff'
     },
     icon: {
       iconSrc: './static/icon.png', 
-      purpose: 'maskable',
       cacheDir: './static/icons',
       sizes: [48, 64, 72, 96, 120, 128, 144, 152, 180, 192, 256, 384, 512]
     },

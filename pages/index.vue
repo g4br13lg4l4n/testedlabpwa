@@ -12,8 +12,8 @@
         <img src="../assets/img/bro.png" alt="Tested Lab" class="hidden show-mobile mb-2 w-10/12"/>
         <div class="content-form mt-2">
           <el-form ref="form" :model="form" :rules="rules">
-            <el-form-item label="Correo" prop="email">
-              <el-input type="text" v-model="form.email"></el-input>
+            <el-form-item label="Usuario" prop="user">
+              <el-input type="text" v-model="form.user"></el-input>
             </el-form-item>
             <el-form-item label="Contraseña" prop="password">
               <el-input type="password" autocomplete="off" v-model="form.password"></el-input>
@@ -35,21 +35,16 @@ export default {
   data() {
     return {
       form: {
-        email: "",
+        user: "",
         password: "",
         terms: ''
       },
       rules: {
-        email: [
+        user: [
           {
             required: true,
-            message: "Correo requerido",
+            message: "Usuario requerido",
             trigger: "blur"
-          },
-          {
-            type: "email",
-            message: "Formato inválido",
-            trigger: ["blur"]
           }
         ],
         password: [
@@ -72,14 +67,13 @@ export default {
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
-        console.log('valid ---->', valid)
         if (valid) {
           this.$auth.loginWith('local', { data: this.form })
           .then(resp => {
             this.$router.push('/home');
           })
           .catch(err => {
-            console.log('error', )
+            console.log('error', err);
             this.$message({
               showClose: true,
               message: err.response.data.message,
