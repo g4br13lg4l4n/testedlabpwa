@@ -3,25 +3,24 @@
     <h1 class="title">Perfil</h1>
     <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
       <el-button round class="float-right round-primary" size="small" @click="formUpdate = true">Editar</el-button>
-      <p class="sub-title mb-0.5">Alejandra Hernández López</p>
+      <p class="sub-title mb-0.5">{{ auth.user.nombre_completo }}</p>
       <p>
         <i class="el-icon-date"></i>
-        alejandra.hl@mail.com
+        {{ auth.user.FECHA_NACIMIENTO | date}}
       </p>
       <p>
         <i class="el-icon-message"></i>
-        alejandra.hl@mail.com
+        {{ auth.user.EMAIL }}
       </p>
       <p>
         <i class="el-icon-mobile"></i>
-        5512345678
+        {{ auth.user.CELULAR }}
       </p>
     </div>
     <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
       <p class="sub-title mb-0.5">Dirección</p>
       <p>
-        Calle Olmo Col. Adolfo López Mateos CP: 70123 Delegación Vasco de
-        Quiroga CDMX
+        {{ auth.user.DOMICILIO === '' ? 'Sin dirección registrada' : auth.user.DOMICILIO }}
       </p>
     </div>
     <el-dialog title="Editar datos" :visible.sync="formUpdate" center class="with-modal">
@@ -31,7 +30,7 @@
             class="picker-full morado-background"
             v-model="form.date"
             type="date"
-            format="dd/MM/yy"
+            format="dd/MM/yyyy"
             placeholder="Fecha de nacimiento"
             autocomplete="off">
           </el-date-picker>
@@ -44,22 +43,68 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="formUpdate = false" class="w-full btn-blue" round>Aceptar</el-button>
+        <el-button type="primary" @click="update()" class="w-full btn-blue" round :loading="loading" :disabled="loading">Aceptar</el-button>
       </span>
     </el-dialog>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import moment from 'moment';
 export default {
   layout: "main",
   name: "profile",
   data() {
     return {
+      loading: false,
       formUpdate: false,
       form: {}
     };
   },
+  computed: {
+    ...mapGetters(["auth"]),
+  },
+  mounted() {
+    let date = '';
+    if(this.auth?.user?.FECHA_NACIMIENTO && this.auth?.user?.FECHA_NACIMIENTO !== '') {
+      date = moment(this.auth?.user?.FECHA_NACIMIENTO, 'YYYY-MM-DD').format('DD/MMMM/YYYY');
+    }
+    this.form = {
+        date: date,
+        email: this.auth?.user?.EMAIL,
+        phone: this.auth?.user?.CELULAR,
+      };
+  },
+  methods: {
+    update() {
+      const data = {
+        celular: this.form.phone,
+        email: this.form.email,
+        fecha_nacimiento: moment(this.form.date, 'DD/MMMM/YYYY').format('YYYY-MM-DD')
+      };
+      this.loading = true;
+      this.$axios.put('perfil', data)
+      .then(resp => {
+        this.loading = false;
+        this.formUpdate = false;
+        this.$message({
+          showClose: true,
+          message: resp.data.message,
+          type: 'success'
+        });
+      })
+      .catch(err => {
+        this.loading = false;
+        this.formUpdate = false;
+        this.$message({
+          showClose: true,
+          message: err.response.data.message,
+          type: 'error'
+        });
+      })
+    }
+  }
 };
 </script>
 <style>

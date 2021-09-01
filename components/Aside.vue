@@ -6,11 +6,12 @@
         <div class="perfil">
             <el-row class="mt-2">
                 <el-col :span="12" :xs="24" :sm="12" :lg="8" class="flex justify-center items-center">
-                    <img src="../assets/img/logo.png" alt="perfil" class="w-2/3">
+                    <img v-if="auth.user.SEXO === 'Femenino'" src="../assets/img/woman.png" alt="perfil femenino" class="w-2/3">
+                    <img v-if="auth.user.SEXO === 'Masculino'" src="../assets/img/man.png" alt="perfil masculino" class="w-2/3">
                 </el-col>
                 <el-col :span="12" :xs="24" :sm="12" :lg="16">
-                    <p class="title-name">Alejandra Hernández López</p>
-                    <p class="text-gray mt-1">27 años</p>
+                    <p class="title-name">{{ auth.user.nombre_completo }}</p>
+                    <p class="text-gray mt-1">{{ auth.user.edad }} años</p>
                 </el-col>
             </el-row>
             <div class="container-list-test mt-2">
@@ -22,3 +23,12 @@
         </div>
     </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+export default {
+    computed: {
+        ...mapGetters(["auth"]),
+    }   
+}
+</script>

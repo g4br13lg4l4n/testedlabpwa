@@ -5,7 +5,9 @@ export const state = () => ({
 
 // getters
 export const getters = {
-
+    auth(state) {
+        return state.auth
+    },
 };
 
 // mutations
