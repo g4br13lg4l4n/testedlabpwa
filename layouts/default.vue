@@ -406,7 +406,13 @@ input.check {
 .morado-background .el-input__inner::placeholder {
   color: #222222;
 }
-
+.el-loading-spinner {
+  left: 50%;
+}
+.row-select img {
+  width: 1.6em;
+  height: 1em;
+}
 @media (max-width: 480px) {
   .with-modal {
     width: 95%;

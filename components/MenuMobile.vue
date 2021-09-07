@@ -65,10 +65,9 @@ export default {
   },
   methods: {
     exit() {
-      this.$router.push("/");
+      this.$auth.logout();
     },
     open() {
-      console.log('this.isOpen ---->', this.isOpen);
       this.isOpen = !this.isOpen;
       if (this.isOpen === true) {
         this.burguerX = "collapse";

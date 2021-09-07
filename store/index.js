@@ -1,19 +1,24 @@
+import { Loading } from 'element-ui';
 // state
 export const state = () => ({
     details: {
         categoriaEstudios: [],
         estudiosCompletos: [],
         estudiosPendientes: []
-    }
+    },
+    test: {}
 });
 
 // getters
 export const getters = {
     auth(state) {
-        return state.auth
+        return state.auth;
     },
     details(state) {
-        return state.details
+        return state.details;
+    },
+    test(state) {
+        return state.test;
     }
 };
 
@@ -24,6 +29,9 @@ export const mutations = {
     },
     set_details(state, data) {
         state.details = data;
+    },
+    set_test(state, data) {
+        state.test = data;
     }
 };
 
@@ -34,7 +42,15 @@ export const actions = {
         commit('set_profile', user);
     },
     async get_details({ commit }, cvePaciente) {
+        const loading = await Loading.service({ fullscreen: true });
         const data = await this.$axios.$get('usuario/detalle/'+ cvePaciente);
+        await loading.close();
         commit('set_details', data);
+    },
+    async get_test({commit}, { cvePaciente, folio }) {
+        const loading = await Loading.service({ fullscreen: true });
+        const data = await this.$axios.$get(`resultado/${cvePaciente}/${folio}`);
+        await loading.close();
+        commit('set_test', data);
     }
 };
