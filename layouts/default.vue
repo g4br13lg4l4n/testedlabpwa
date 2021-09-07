@@ -416,7 +416,7 @@ input.check {
 
 .el-dialog__body {
   word-break: inherit;
-  text-align: center;
+  text-align: center !important;
 }
 @media (max-width: 480px) {
   .with-modal {

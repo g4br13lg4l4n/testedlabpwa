@@ -25,8 +25,8 @@
     </el-form>
     <div>
       <div class="options-test">
-        <el-button :type="flagTest === 'completed' ? 'primary' : 'info'" @click="listTest('completed')" round>Completados</el-button>
-        <el-button :type="flagTest === 'no-completed' ? 'primary' : 'info'" @click="listTest('no-completed')" round>Pendientes</el-button>
+        <el-button :type="flagTest === 'completed' ? 'primary' : ''" @click="listTest('completed')" round>Completados</el-button>
+        <el-button :type="flagTest === 'no-completed' ? 'primary' : ''" @click="listTest('no-completed')" round>Pendientes</el-button>
       </div>
       <div class="mt-2 container-test flex content-between flex-wrap" v-if="flagTest === 'completed'">
         <card-test v-for="test in details.estudiosCompletos" :key="test.folio" :test="test"/>

@@ -57,7 +57,8 @@ export default {
     background: rgba(107, 119, 154, 0.05);
     border-radius: 20px;
     min-width: 320px;
-    padding: 20px;
+    min-height: 106px;
+    padding: 18px 20px;
     margin: 0 12px;
   }
 </style>
