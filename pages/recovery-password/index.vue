@@ -31,6 +31,7 @@
 
 <script>
 export default {
+  auth: false,
   data() {
     return {
       flag: false,
@@ -41,12 +42,12 @@ export default {
         email: [
           {
             required: true,
-            message: "Correo requerido",
+            message: "Usuario requerido",
             trigger: "blur",
           },
           {
             type: "email",
-            message: "Formato inválido",
+            message: "Correo inválido",
             trigger: ["blur"],
           },
         ],
@@ -57,19 +58,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$auth
-            .loginWith("local", { data: this.form })
-            .then((resp) => {
-              this.flag = true;
-            })
-            .catch((err) => {
-              console.log("error");
-              this.$message({
-                showClose: true,
-                message: err.response.data.message,
-                type: "error",
-              });
-            });
+          this.flag = true; 
         }
       });
     },

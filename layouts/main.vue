@@ -132,8 +132,7 @@ div.burger {
 
 div.navbar{height:73px;background:#385e97;}
 
-div.circle{	
-	border-radius: 50%;
+div.circle{
 	width: 0px;
 	height: 0px; 
 	position:absolute;
@@ -148,11 +147,11 @@ div.circle{
 	        transition: all 300ms cubic-bezier(0.000, 0.995, 0.990, 1.000);	
 }
 div.circle.expand{
-	width:1200px;
-	height:1280px;
-  z-index: 1;
-	top: -560px;
-	left: -565px; 	
+	width:100vw;
+	height:100vh;
+  	z-index: 1;
+	top: 0;
+	left: 0; 	
 	-webkit-transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
 	   -moz-transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
 	    -ms-transition: all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
@@ -234,5 +233,14 @@ div.menu li.animate:nth-of-type(6){
     font-size: 1.3rem;
     line-height: 2rem;
   }
+  .title {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.5rem;
+    line-height: 2.4rem;
+	letter-spacing: 0.300349px;
+	color: #0360AD;
+	}
 }
 </style>

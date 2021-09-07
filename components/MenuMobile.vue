@@ -36,7 +36,7 @@
             <el-divider></el-divider>
           </li>
           <li :class="{ animate: isOpen }">
-            <button @click="exit" class="exit-btn flex close-sesion-mobile">
+            <button @click="closeSession = true" class="exit-btn flex close-sesion-mobile">
               <img src="../assets/img/logout.svg" alt="salir" class="mr-1" />
               <span>Cerrar sesión</span>
             </button>
@@ -49,6 +49,19 @@
         <div class="z" :class="burguerZ"></div>
       </div>
     </div>
+    <el-dialog
+      title="Aviso"
+      :visible.sync="closeSession"
+      width="280px"
+      center
+      class="text-center"
+    >
+      <span>¿Estás seguro que quieres cerrar sesión?</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="exit()" round>Si</el-button>
+        <el-button @click="closeSession = false" round>No</el-button>
+      </span>
+    </el-dialog>
   </nav>
 </template>
 
@@ -57,6 +70,7 @@ export default {
   props: ["active"],
   data() {
     return {
+      closeSession: false,
       isOpen: false,
       burguerX: "",
       burguerY: "",
@@ -65,7 +79,13 @@ export default {
   },
   methods: {
     exit() {
-      this.$auth.logout();
+      this.$auth.logout()
+      .then(() => {
+        this.closeSession = false;
+      })
+      .catch(() => {
+        this.closeSession = false;
+      });
     },
     open() {
       this.isOpen = !this.isOpen;

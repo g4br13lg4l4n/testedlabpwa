@@ -413,6 +413,11 @@ input.check {
   width: 1.6em;
   height: 1em;
 }
+
+.el-dialog__body {
+  word-break: inherit;
+  text-align: center;
+}
 @media (max-width: 480px) {
   .with-modal {
     width: 95%;

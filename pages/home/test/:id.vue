@@ -3,7 +3,7 @@
         <div v-if="test.status === 'success' && test.data.solicitudesEstudio[0].liberado">
             <div class="flex justify-between items-center">
                 <el-button round size="small" @click="$router.push('/home')"><i class="el-icon-back"></i> Regresar</el-button>
-                <el-button round class="round-primary"><i class="el-icon-download"></i> Descargar</el-button>
+                <el-button round size="small" class="round-primary"><i class="el-icon-download"></i> Descargar</el-button>
             </div>
             <div class="mt-1 mb-2">
                 <h1 class="title">Resultados del test</h1>
