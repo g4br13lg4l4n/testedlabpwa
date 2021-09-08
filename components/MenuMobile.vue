@@ -15,21 +15,24 @@
             />
           </li>
           <li :class="{ animate: isOpen }" @click="open">
-            <span
-              ><i class="el-icon-s-home"></i>
-              <nuxt-link to="/home">Inicio</nuxt-link>
+            <span>
+              <nuxt-link to="/home" class="flex justify-center item-center">
+                <img src="../assets/img/home.svg" alt="home" class="mr-1.5"><span>Inicio</span>
+              </nuxt-link>
             </span>
           </li>
           <li :class="{ animate: isOpen }" @click="open">
-            <span
-              ><i class="el-icon-user"></i>
-              <nuxt-link to="/profile">Perfil</nuxt-link>
+            <span>
+              <nuxt-link to="/profile" class="flex justify-center item-center">
+                <img src="../assets/img/user.svg" alt="User" class="mr-1.5"> <span>Perfil</span>
+              </nuxt-link>
             </span>
           </li>
           <li :class="{ animate: isOpen }" @click="open">
-            <span
-              ><i class="el-icon-service"></i>
-              <nuxt-link to="/contact">Contacto</nuxt-link>
+            <span>
+              <nuxt-link to="/contact" class="flex justify-center item-center">
+                <img src="../assets/img/headphones.svg" alt="headphones" class="mr-1.5"> <span>Contacto</span>
+              </nuxt-link>
             </span>
           </li>
           <li :class="{ animate: isOpen }">

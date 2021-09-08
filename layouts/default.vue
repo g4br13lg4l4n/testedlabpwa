@@ -95,10 +95,16 @@ hr {
   width: 100%;
   height: 50px;
   border-radius: 6px;
-  border: 1px solid #8692a6;
+  border: 1px solid #dadada;
+  background-color: rgba(107, 119, 154, 0.05);
   transition: top 0.2s ease-in-out;
   padding: 0 15px;
   margin-top: -10px;
+}
+
+.el-button--primary, .el-button--primary:focus, .el-button--primary:hover {
+  background-color: #0061AC;
+  border-color: #0061AC;
 }
 
 .content-form input:focus {
@@ -148,7 +154,7 @@ input.check {
 }
 
 .btn-blue {
-  background: #3e64ff;
+  background: #0061AC;
   width: 100%;
   height: 45px;
   border: 0;
@@ -163,7 +169,7 @@ input.check {
 }
 
 .btn-blue-2 {
-  background: #3e64ff;
+  background: #0061AC;
   width: 100%;
   height: 35px;
   border: 0;
@@ -202,6 +208,15 @@ input.check {
   background: #1565d8;
 }
 
+.el-checkbox__input.is-checked .el-checkbox__inner, 
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: #0061AC;
+  border-color: #0061AC;
+}
+
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  color: #0061AC;
+}
 .content-form a {
   margin-top: 30px;
   color: #696f79;

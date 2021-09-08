@@ -2,16 +2,16 @@
   <div class="container-fluid">
     <el-row class="flex flex-none-mobile">
       <el-col :span="12" :xs="24" :sm="12" :lg="12" class="bg-blue-login diplay-none-mobile">
-        <img src="../assets/img/bro.png" alt="Tested Lab"/>
+        <img src="../assets/img/bro-desk.svg" alt="Tested Lab" class="w-2/3"/>
       </el-col>
       <el-col :span="12" :xs="24" :sm="12" :lg="12" class="position-form">
         <div class="flex-mobile">
           <img src="../assets/img/logo2.svg" alt="Tested Lab">
           <h2 class="text-center mt-1">Iniciar sesión</h2>
         </div>
-        <img src="../assets/img/bro.png" alt="Tested Lab" class="hidden show-mobile mb-2 w-10/12"/>
+        <img src="../assets/img/bro.svg" alt="Tested Lab" class="hidden show-mobile mb-2 w-10/12"/>
         <div class="content-form mt-2">
-          <el-form ref="form" :model="form" :rules="rules">
+          <el-form ref="form" :model="form" :rules="rules" class="text-center">
             <el-form-item label="Usuario" prop="user">
               <el-input type="text" v-model="form.user"></el-input>
             </el-form-item>

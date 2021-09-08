@@ -3,8 +3,8 @@
     <h1 class="title">Contacto</h1>
     <p class="sub-title mb-0.5 mt-1 mb-1">¿Necesitas agendar una cita?</p>
     <p class="mb-1">Comunicate con nosotros</p>
-    <div class="flex items-center mr-4 my-3">
-      <div class="card-contact flex justify-between items-center">
+    <div class="flex items-center mr-4 my-2 flex-wrap">
+      <div class="card-contact flex justify-between items-center mt-1">
         <div>
           <img src="../../assets/img/whats.svg" alt="Whatssap">
         </div>
@@ -16,7 +16,7 @@
           <img src="../../assets/img/row.svg" alt="row" />
         </a>
       </div>
-      <div class="card-contact flex justify-between items-center">
+      <div class="card-contact flex justify-between items-center mt-1">
         <div>
           <img src="../../assets/img/contact.svg" alt="Contacto">
         </div>

@@ -43,8 +43,8 @@
   padding: 10px;
 }
 .round-primary {
-  border: 1px solid #3E64FF !important;
-  color: #3E64FF;
+  border: 1px solid #0061AC !important;
+  color: #0061AC;
 }
 
 

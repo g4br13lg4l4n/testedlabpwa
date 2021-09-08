@@ -77,8 +77,8 @@ a.item-menu:first-child {
   margin-left: 0;
 }
 nav.menu a.nuxt-link-active {
-  background-color: #3e64ff;
-  border: 1px solid #3e64ff;
+  background-color: #0061AC;
+  border: 1px solid #0061AC;
   border-radius: 15px;
   color: white;
   padding: 10px 26px;
@@ -91,6 +91,6 @@ nav.menu a.nuxt-link-active {
   line-height: 19px;
   text-align: center;
   letter-spacing: 0.486957px;
-  color: #3e64ff;
+  color: #0061AC;
 }
 </style>
