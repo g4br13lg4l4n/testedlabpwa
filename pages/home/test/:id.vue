@@ -31,7 +31,7 @@
             <h2 class="sub-title my-8">Datos del examen</h2>
             <el-row class="mt-2.5">
                 <el-col :span="12" :xs="24" :sm="6" :lg="6">
-                    <img src="../../../assets/img/qr.png" alt="QR" width="90%" class="m0-auto">
+                    <img :src="test.data.urlQR" alt="QR" width="90%" class="m0-auto">
                 </el-col>
                 <el-col :span="12" :xs="24" :sm="6" :lg="18">
                     <p class="sub-title mb-1">{{ test.data.solicitudesEstudio[0].nombreEstudio }}</p>
@@ -48,11 +48,11 @@
                     <el-row>
                         <el-col :span="24">
                             <p class="text-gray mb-1.5 mt-1">Método:</p>
-                            <p class="sub-title">Inmunoensayo cromatográfico de flujo lateral</p>
+                            <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMetodo }}</p>
                         </el-col>
                         <el-col :span="24">
                             <p class="text-gray mb-1.5 mt-1">Tipo de muestra:</p>
-                            <p class="sub-title">Exudado nasofaríngeo</p>
+                            <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMuestra }}</p>
                         </el-col>
                     </el-row>
                 </el-col>
@@ -73,18 +73,17 @@
                 <div class="mt-3">
                     <el-row :gutter="20">
                         <el-col :span="12" :xs="24" :sm="12" :lg="12" class="card-white">
-                            <p class="sub-title mb-1.5">Q.B.P. Noé Mendoza Alvarez</p>
+                            <p class="sub-title mb-1.5">{{ test.data.responsableSanitario.nombre }}</p>
                             <p class="text-gray mb-1.5">Responsable Sanitario</p>
-                            <p class="text-gray mb-1.5">Instituto Politécnico Nacional</p>
-                            <p class="text-gray mb-1.5">Cédula profesional:</p>
+                            <p class="text-gray mb-1.5">{{ test.data.responsableSanitario.escuelaProcedencia }}</p>
                             <p class="text-gray mb-1.5">
-                                <strong>11933758</strong>
+                                <strong>{{ test.data.responsableSanitario.cedula }}</strong>
                             </p>
                         </el-col>
                         <el-col :span="12" :xs="24" :sm="12" :lg="12" class="card-white">
                             <p class="sub-title mb-1.5">Datos de la empresa</p>
-                            <p class="text-gray mb-1.5">Grupo RAC y SPE Solutions S.A de C.V.</p>
-                            <p class="text-gray mb-1.5">Prol. Paseo de la Reforma #61, piso 3, oficina 3-A. Paseo de las Lomas, Álvaro Obregón. CDMX. CP: 01330</p>
+                            <p class="text-gray mb-1.5">{{ test.data.datosEmpresa.nombre }}</p>
+                            <p class="text-gray mb-1.5">{{ test.data.datosEmpresa.direccion }}</p>
                         </el-col>
                     </el-row>
                 </div>

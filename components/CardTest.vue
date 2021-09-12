@@ -7,14 +7,14 @@
       </p>
       <p class="category-test">Descripción: {{ test.descripcion }}</p>
     </div>
-    <nuxt-link :to="'home/test/' +  test.folio" class="bg-white row-select">
+    <nuxt-link :to="'home/test/' +  test.folio" class="bg-white row-select" v-if="type === 'complated'">
       <img src="../assets/img/row.svg" alt="row" />
     </nuxt-link>
   </div>
 </template>
 <script>
 export default {
-  props: ['test']
+  props: ['test', 'type']
 };
 </script>
 

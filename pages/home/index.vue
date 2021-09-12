@@ -29,10 +29,10 @@
         <el-button :type="flagTest === 'no-completed' ? 'primary' : ''" @click="listTest('no-completed')" round>Pendientes</el-button>
       </div>
       <div class="mt-2 container-test flex content-between flex-wrap" v-if="flagTest === 'completed'">
-        <card-test v-for="test in details.estudiosCompletos" :key="test.folio" :test="test"/>
+        <card-test v-for="test in details.estudiosCompletos" :key="test.folio" :test="test" type="complated"/>
       </div>
       <div class="mt-2 container-test flex content-between flex-wrap" v-else>
-          <card-test v-for="test in details.estudiosPendiente" :key="test.folio" :test="test"/>
+          <card-test v-for="test in details.estudiosPendientes" :key="test.folio" :test="test" type="pending"/>
         </div>
     </div>
   </div>
