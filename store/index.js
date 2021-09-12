@@ -6,6 +6,7 @@ export const state = () => ({
         estudiosCompletos: [],
         estudiosPendientes: []
     },
+    categoriasEstudios: [],
     test: {}
 });
 
@@ -19,6 +20,9 @@ export const getters = {
     },
     test(state) {
         return state.test;
+    },
+    categoriasEstudios(state) {
+        return state.categoriasEstudios;
     }
 };
 
@@ -32,6 +36,9 @@ export const mutations = {
     },
     set_test(state, data) {
         state.test = data;
+    },
+    set_categories(state, data) {
+        state.categoriasEstudios = data;
     }
 };
 
@@ -52,5 +59,17 @@ export const actions = {
         const data = await this.$axios.$get(`resultado/${cvePaciente}/${folio}`);
         await loading.close();
         commit('set_test', data);
-    }
+    },
+    async get_categories({commit}, id) {
+        const loading = await Loading.service({ fullscreen: true });
+        const { categoria_estudios } = await this.$axios.$get(`usuario/categoria/${id}`);
+        await loading.close();
+        commit('set_categories', categoria_estudios);
+    },
+    async get_test_by_category({commit}, filter) {
+        const loading = await Loading.service({ fullscreen: true });
+        const data = await this.$axios.$get(`usuario/categoria/${filter?.cvePaciente}/${filter?.category}`);
+        await loading.close();
+
+    } 
 };

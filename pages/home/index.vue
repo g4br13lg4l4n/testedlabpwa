@@ -9,20 +9,7 @@
       cargar rápidamente tus resultados.
     </p>
     <h2 class="sub-title mt-2">Filtros de búsqueda</h2>
-    <el-form label-position="top" :inline="true" :model="form" class="mt-1 flex items-end ">
-      <el-form-item label="Categoría">
-        <el-select v-model="form.filter" placeholder="Seleccionar">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          >
-          </el-option>
-        </el-select>
-      </el-form-item>
-      <el-button class="mb-2" type="warning" @click="onSubmit" round>Realizar búsqueda</el-button>
-    </el-form>
+    <form-search />
     <div>
       <div class="options-test">
         <el-button :type="flagTest === 'completed' ? 'primary' : ''" @click="listTest('completed')" round>Completados</el-button>
@@ -41,24 +28,16 @@
 <script>
 import { mapGetters } from 'vuex';
 import CardTest from '../../components/CardTest';
+import FormSearch from '../../components/FormSearch';
 export default {
   components: { 
-    CardTest
+    CardTest,
+    FormSearch
   },
   layout: "main",
   data() {
     return {
       flagTest: 'completed',
-      form: {
-        filter: ''
-      },
-      cardTestData: [],
-      options: [
-        {
-          value: "Test COVID-19",
-          label: "Test COVID-19",
-        },
-      ],
     };
   },
   computed: {
@@ -70,10 +49,7 @@ export default {
   methods: {
     listTest(flag) {
       this.flagTest = flag;
-    },
-    onSubmit() {
-      console.log("submit!");
-    },
+    }
   },
 };
 </script>
