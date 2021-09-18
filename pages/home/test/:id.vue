@@ -71,11 +71,11 @@
                 :src="test.data.solicitudesEstudio[0].resultados[0].documentos[0].documento" 
                 alt="anexo"
                 class="w-64">
-                <p class="my-8">Prueba utilizada: Genrui SARS-CoV-2 Antigen Test Kit para detección Cualitativa de Antígeno de SARS-CoV-2 en muestra nasofaríngea.</p>
+                <p class="my-8">Prueba utilizada: {{ test.data.solicitudesEstudio[0].pruebaUtilizada }}</p>
                 <p class="text-gray mb-1.5">
                     <strong>Nota:</strong>
                 </p>
-                <p class="text-gray">Este resultado debe ser interpretado por personal médico, haciendo correlación con la información clínica del paciente. Un resultado negativo no descarta una posible infección, no se recomienda el uso de esta prueba para diagnóstico en pacientes asintomáticos.</p>
+                <p class="text-gray">{{ test.data.solicitudesEstudio[0].nota }}</p>
                 <div class="mt-3">
                     <el-row :gutter="20">
                         <el-col :span="12" :xs="24" :sm="12" :lg="12" class="card-white">
