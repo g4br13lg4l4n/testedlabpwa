@@ -12,7 +12,7 @@
           <p class="title-test">WhatsApp</p>
           <p class="category-test">Chatea con nosotros</p>
         </div>
-        <a href="#" class="bg-white row-select">
+        <a href="https://wa.link/t8e6z2" class="bg-white row-select" target="_blank">
           <img src="../../assets/img/row.svg" alt="row" />
         </a>
       </div>
@@ -22,9 +22,9 @@
         </div>
         <div>
           <p class="title-test w-40">Línea de atención al cliente</p>
-          <p class="category-test">Llámanos al 55 8765 4321</p>
+          <a class="category-test" href="tel:5589511329">Llámanos al 55 8951 1329</a>
         </div>
-        <a href="#" class="bg-white row-select">
+        <a href="tel:5589511329" class="bg-white row-select">
           <img src="../../assets/img/row.svg" alt="row" />
         </a>
       </div>
@@ -36,9 +36,9 @@
         </div>
         <div>
           <p class="title-test w-40">Línea de atención al cliente</p>
-          <p class="category-test">Llámanos al 55 8765 4321</p>
+          <a class="category-test" href="tel:5589511334">Llámanos al 55 8951 1334</a>
         </div>
-        <a href="#" class="bg-white row-select">
+        <a href="tel:5589511334" class="bg-white row-select">
           <img src="../../assets/img/row.svg" alt="row" />
         </a>
       </div>

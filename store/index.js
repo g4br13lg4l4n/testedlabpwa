@@ -39,6 +39,14 @@ export const mutations = {
     },
     set_categories(state, data) {
         state.categoriasEstudios = data;
+    },
+    set_detailsByFilter(state, data) {
+        const {
+            estudiosCompletos,
+            estudiosPendientes
+        } = data;
+        state.details.estudiosCompletos = estudiosCompletos;
+        state.details.estudiosPendientes = estudiosPendientes;
     }
 };
 
@@ -68,7 +76,14 @@ export const actions = {
     },
     async get_test_by_category({commit}, filter) {
         const loading = await Loading.service({ fullscreen: true });
-        const data = await this.$axios.$get(`usuario/categoria/${filter?.cvePaciente}/${filter?.category}`);
+        const { categoria_estudios } = await this.$axios.$get(`usuario/categoria/${filter?.cvePaciente}/${filter?.category}`);
+        const estudiosCompletos = categoria_estudios.filter((row) =>  row.liberado);
+        const estudiosPendientes = categoria_estudios.filter((row) =>  !row.liberado);
+        const data = {
+            estudiosCompletos,
+            estudiosPendientes
+        };
+        commit('set_detailsByFilter', data);
         await loading.close();
 
     } 

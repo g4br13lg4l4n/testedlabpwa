@@ -2,8 +2,14 @@
     <div>
         <div v-if="test.status === 'success' && test.data.solicitudesEstudio[0].liberado">
             <div class="flex justify-between items-center">
-                <el-button round size="small" @click="$router.push('/home')"><i class="el-icon-back"></i> Regresar</el-button>
-                <el-button round size="small" class="round-primary"><i class="el-icon-download"></i> Descargar</el-button>
+                <el-button round size="small" @click="$router.push('/home')">
+                    <i class="el-icon-back"></i> Regresar
+                </el-button>
+                <el-button round size="small" class="round-primary">
+                    <a :href="test.data.urlPdfResultados" download target="_blank">
+                        <i class="el-icon-download"></i> Descargar
+                    </a>
+                </el-button>
             </div>
             <div class="mt-1 mb-2">
                 <h1 class="title">Resultados del test</h1>
@@ -23,7 +29,7 @@
                     </el-col>
                     <el-col :span="12" :xs="12" :sm="6" :lg="6">
                         <p class="text-gray mb-1.5">Fecha de reporte:</p>
-                        <p class="sub-title">{{ test.data.solicitud.fechaSolicitud | date }}</p>
+                        <p class="sub-title">{{ test.data.solicitudesEstudio[0].fechaReporte | date }}</p>
                     </el-col>
                 </el-row>
             </div>
