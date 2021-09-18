@@ -30,7 +30,7 @@
             class="picker-full morado-background"
             v-model="form.date"
             type="date"
-            format="dd/MM/yyyy"
+            format="dd-MM-yyyy"
             placeholder="Fecha de nacimiento"
             autocomplete="off">
           </el-date-picker>
@@ -68,7 +68,7 @@ export default {
   mounted() {
     let date = '';
     if(this.auth?.user?.fechaNacimiento && this.auth?.user?.fechaNacimiento !== '') {
-      date = moment(this.auth?.user?.fechaNacimiento, 'YYYY-MM-DD').format('DD/MMMM/YYYY');
+      date = new Date(moment(this.auth?.user?.fechaNacimiento, 'YYYY-MM-DD'));
     }
     this.form = {
         date: date,
