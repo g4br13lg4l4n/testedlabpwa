@@ -6,7 +6,7 @@
       </el-col>
       <el-col :span="12" :xs="24" :sm="24" :lg="12" class="position-form">
         <div class="flex-mobile">
-          <img src="../../assets/img/logo2.svg" alt="Tested Lab" />
+          <img src="../../assets/img/logo2.svg" alt="Tested Lab" class="center"/>
           <h2 class="text-center">Recuperar contraseña</h2>
         </div>
         <img src="../../assets/img/img-password.png" alt="Tested Lab" class="hidden show-mobile mb-2 w-10/12"/>
@@ -65,3 +65,9 @@ export default {
   },
 };
 </script>
+
+<style>
+  .center {
+    margin: 0 auto;
+  }
+</style>
