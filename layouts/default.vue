@@ -480,5 +480,12 @@ input.check {
   .el-dialog {
     width: 95%;
   }
+  .card-contact {
+    min-width: 290px !important;
+    min-height: 90px !important;
+    padding: 14px 10px !important;
+    margin-top: 12px !important;
+    margin-left: 0 !important;
+  }
 }
 </style>

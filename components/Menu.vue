@@ -19,7 +19,7 @@
     </ul>
     <button @click="closeSession = true" class="exit-btn flex">
       <img src="../assets/img/logout.svg" alt="salir" class="mr-1" />
-      <span>Cerrar sesión</span>
+      <span class="diplay-none-ipad">Cerrar sesión</span>
     </button>
     <el-dialog
       title="Aviso"
@@ -96,5 +96,10 @@ nav.menu a.nuxt-link-active {
   text-align: center;
   letter-spacing: 0.486957px;
   color: #0061AC;
+}
+@media (max-width: 770px) {
+  .diplay-none-ipad {
+    display: none; 
+  }
 }
 </style>

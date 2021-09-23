@@ -15,19 +15,19 @@
                 <h1 class="title">Resultados del test</h1>
                 <h2 class="sub-title mt-1">Datos del paciente</h2>
                 <el-row class="mt-2.5">
-                    <el-col :span="12" :xs="12" :sm="6" :lg="6">
+                    <el-col :span="12" :xs="12" :sm="12" :lg="6">
                         <p class="text-gray mb-1.5">Folio:</p>
                         <p class="sub-title">{{ test.data.solicitud.folio }}</p>
                     </el-col>
-                    <el-col :span="12" :xs="12" :sm="6" :lg="6">
+                    <el-col :span="12" :xs="12" :sm="12" :lg="6">
                         <p class="text-gray mb-1.5">Sexo:</p>
                         <p class="sub-title">{{ auth.user.sexo }}</p>
                     </el-col>
-                    <el-col :span="12" :xs="12" :sm="6" :lg="6">
+                    <el-col :span="12" :xs="12" :sm="12" :lg="6">
                         <p class="text-gray mb-1.5">Fecha de muestreo:</p>
                         <p class="sub-title">{{ test.data.solicitud.fechaSolicitud | date }}</p>
                     </el-col>
-                    <el-col :span="12" :xs="12" :sm="6" :lg="6">
+                    <el-col :span="12" :xs="12" :sm="12" :lg="6">
                         <p class="text-gray mb-1.5">Fecha de reporte:</p>
                         <p class="sub-title">{{ test.data.solicitudesEstudio[0].fechaReporte | date }}</p>
                     </el-col>
@@ -36,10 +36,10 @@
             <el-divider></el-divider>
             <h2 class="sub-title my-8">Datos del examen</h2>
             <el-row class="mt-2.5">
-                <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                <el-col :span="12" :xs="24" :sm="16" :lg="6">
                     <img :src="test.data.urlQR" alt="QR" width="90%" class="m0-auto">
                 </el-col>
-                <el-col :span="12" :xs="24" :sm="6" :lg="18">
+                <el-col :span="12" :xs="24" :sm="24" :lg="18">
                     <p class="sub-title mb-1">{{ test.data.solicitudesEstudio[0].nombreEstudio }}</p>
                     <el-row>
                         <el-col :span="12" :xs="24" :sm="6" :lg="8">
