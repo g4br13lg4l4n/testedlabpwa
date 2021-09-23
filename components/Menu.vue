@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { Loading } from 'element-ui';
 export default {
   data() {
     return {
@@ -46,12 +47,15 @@ export default {
   },
   methods: {
     exit() {
+      const loading = Loading.service({ fullscreen: true });
       this.$auth.logout()
       .then(() => {
         this.closeSession = false;
+        loading.close();
       })
       .catch(() => {
         this.closeSession = false;
+        loading.close();
       });
     },
   },

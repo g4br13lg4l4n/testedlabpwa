@@ -15,7 +15,7 @@
             Escribe tu correo electrónico con el que estés dado de alta en
             Tested LAb
           </p>
-          <p class="text-center mt-1 mb-2" v-if="flag">Te hemos enviado un correo con tu nueva contraseña</p>
+          <p class="text-center mt-1 mb-2" v-if="flag">Te hemos enviado un correo con tu contraseña</p>
           <el-form ref="form" :model="form" :rules="rules" v-if="!flag" class="mb-2">
             <el-form-item label="Correo" prop="email">
               <el-input type="text" v-model="form.email"></el-input>
@@ -58,7 +58,19 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.flag = true; 
+          this.$axios.post('/usuario/recuperar/password/', this.form)
+          .then(resp => {
+            const { data } = resp;
+            if (data.status === 'error') {
+              return this.$message({
+                showClose: true,
+                message: 'Su correo no se encuentra vinculada a una cuenta de Tested Lab',
+                type: 'error'
+              })
+            }
+            this.flag = true;
+          })
+          .catch(err => {});
         }
       });
     },

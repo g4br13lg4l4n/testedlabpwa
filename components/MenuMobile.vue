@@ -69,6 +69,7 @@
 </template>
 
 <script>
+import { Loading } from 'element-ui';
 export default {
   props: ["active"],
   data() {
@@ -82,12 +83,15 @@ export default {
   },
   methods: {
     exit() {
+      const loading = Loading.service({ fullscreen: true });
       this.$auth.logout()
       .then(() => {
         this.closeSession = false;
+        loading.close();
       })
       .catch(() => {
         this.closeSession = false;
+        loading.close();
       });
     },
     open() {
