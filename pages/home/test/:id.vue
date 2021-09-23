@@ -61,7 +61,7 @@
                             <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMuestra }}</p>
                         </el-col>
                         <el-col :span="24" class="mt-1 mb-1.5 sub-title alert-time">
-                            El QR solo funciona por 72 horas una vez emitido el reporte
+                            *Reporte con validez oficial por las siguientes 72 horas a partir de la fecha de emisión.
                         </el-col>
                     </el-row>
                 </el-col>
