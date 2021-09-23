@@ -60,6 +60,9 @@
                             <p class="text-gray mb-1.5 mt-1">Tipo de muestra:</p>
                             <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMuestra }}</p>
                         </el-col>
+                        <el-col :span="24" class="mt-1 mb-1.5 sub-title alert-time">
+                            El QR solo funciona por 72 horas una vez emitido el reporte
+                        </el-col>
                     </el-row>
                 </el-col>
             </el-row>
@@ -127,5 +130,8 @@ export default {
         box-shadow: 0px 10px 60px rgba(107, 119, 154, 0.1);
         border-radius: 20px;
         padding: 22px 28px;
+    }
+    .alert-time {
+        color: #0360AD;
     }
 </style>
