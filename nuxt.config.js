@@ -94,7 +94,7 @@ export default {
       mobileAppIOS: true,
       favicon: true,
       name: 'Tested Lab',
-      theme_color: '#ffffff',
+      theme_color: '#FFFFFF',
       lang: 'es',
       ogType: 'producto',
       ogSiteName: 'Tested Lab',
@@ -108,9 +108,9 @@ export default {
       lang: 'es',
       useWebmanifestExtension: false,
       start_url: '/',
-      theme_color: '#fff',
+      theme_color: '#FFFFFF',
       display: 'standalone',
-      background_color: '#fff'
+      background_color: '#FFFFFF'
     },
     icon: {
       iconSrc: './static/icon.png', 
