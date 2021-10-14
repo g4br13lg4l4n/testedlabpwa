@@ -41,6 +41,9 @@
         <el-form-item label="Teléfono">
           <el-input v-model="form.phone" autocomplete="off" class="morado-background"></el-input>
         </el-form-item>
+        <el-form-item label="Domicilio">
+          <el-input v-model="form.domicilio" autocomplete="off" class="morado-background"></el-input>
+        </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="update()" class="w-full btn-blue" round :loading="loading" :disabled="loading">Aceptar</el-button>
@@ -74,6 +77,7 @@ export default {
         date: date,
         email: this.auth?.user?.email,
         phone: this.auth?.user?.celular,
+        domicilio: this.auth?.user?.domicilio
       };
   },
   methods: {
@@ -81,7 +85,8 @@ export default {
       const data = {
         celular: this.form.phone,
         email: this.form.email,
-        fecha_nacimiento: moment(this.form.date, 'DD/MMMM/YYYY').format('YYYY-MM-DD')
+        fecha_nacimiento: moment(this.form.date, 'DD/MMMM/YYYY').format('YYYY-MM-DD'),
+        domicilio: this.form.domicilio
       };
       this.loading = true;
       this.$axios.put('perfil', data)

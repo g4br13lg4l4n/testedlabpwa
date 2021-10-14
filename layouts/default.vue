@@ -400,7 +400,7 @@ input.check {
   color: #222b45;
 }
 .with-modal {
-  width: 45em;
+  width: 100%;
   margin: 0 auto;
 }
 .el-dialog {
@@ -432,6 +432,9 @@ input.check {
 .el-dialog__body {
   word-break: inherit;
   text-align: center !important;
+}
+.el-dialog--center {
+  max-width: 440px;
 }
 @media (max-width: 480px) {
   .with-modal {
