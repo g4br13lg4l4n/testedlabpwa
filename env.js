@@ -1,4 +1,4 @@
 module.exports = {
-  domain: 'http://localhost:3001',
-  production: false
+  prod: 'https://servicios.testedlab.com.mx/api/v1/',
+  dev: 'https://cfm.fredzuniga.opalstacked.com/cfm-api/api/v1/'
 }
