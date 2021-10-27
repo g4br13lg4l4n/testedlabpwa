@@ -23,6 +23,26 @@
         {{ auth.user.domicilio === '' ? 'Sin dirección registrada' : auth.user.domicilio }}
       </p>
     </div>
+    <div class="card-white bg-white rounded-3xl py-6 px-5 my-2 shadow w-96 card-profile">
+      <el-button round class="round-primary" size="small" @click="formUpdatePassword = true">Cambiar contraseña</el-button>
+      
+    </div>
+    <el-dialog title="Cambiar contraseña" :visible.sync="formUpdatePassword" center class="with-modal">
+      <el-form :model="formPassword">
+          <el-form-item label="Ingrese su nueva contraseña">
+            <el-input
+              placeholder="Nueva contraseña"
+              prefix-icon="el-icon-lock" 
+              v-model="formPassword.password" 
+              autocomplete="off" 
+              class="morado-background"></el-input>
+          </el-form-item>
+         
+            <el-button type="primary" @click="updatePassword()" class="w-full btn-blue" round :loading="loading" :disabled="loading">Guardar</el-button>
+          
+      </el-form>
+    </el-dialog>
+
     <el-dialog title="Editar datos" :visible.sync="formUpdate" center class="with-modal">
       <el-form :model="form">
         <el-form-item label="Fecha de nacimiento">
@@ -62,7 +82,9 @@ export default {
     return {
       loading: false,
       formUpdate: false,
-      form: {}
+      formUpdatePassword: false,
+      form: {},
+      formPassword: {}
     };
   },
   computed: {
@@ -81,6 +103,31 @@ export default {
       };
   },
   methods: {
+    updatePassword() {
+      const data = {
+        password: this.formPassword.password
+      }
+      this.loading = true;
+      this.$axios.post('/usuario/actualizar/password', data)
+      .then(resp => {
+        this.loading = false;
+        this.formUpdatePassword = false;
+        this.$message({
+          showClose: true,
+          message: resp.data.message,
+          type: 'success'
+        });
+      })
+      .catch(err => {
+        this.loading = false;
+        this.formUpdatePassword = false;
+        this.$message({
+          showClose: true,
+          message: err.response.data.message,
+          type: 'error'
+        });
+      })
+    },
     update() {
       const data = {
         celular: this.form.phone,
