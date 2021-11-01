@@ -45,6 +45,7 @@
 
     <el-dialog title="Editar datos" :visible.sync="formUpdate" center class="with-modal">
       <el-form :model="form">
+        <!--
         <el-form-item label="Fecha de nacimiento">
           <el-date-picker
             class="picker-full morado-background"
@@ -55,6 +56,7 @@
             autocomplete="off">
           </el-date-picker>
         </el-form-item>
+        -->
         <el-form-item label="Correo">
           <el-input v-model="form.email" autocomplete="off" class="morado-background"></el-input>
         </el-form-item>
@@ -91,12 +93,14 @@ export default {
     ...mapGetters(["auth"]),
   },
   mounted() {
+    /*
     let date = '';
     if(this.auth?.user?.fechaNacimiento && this.auth?.user?.fechaNacimiento !== '') {
       date = new Date(moment(this.auth?.user?.fechaNacimiento, 'YYYY-MM-DD'));
     }
+    */
     this.form = {
-        date: date,
+      //  date: date,
         email: this.auth?.user?.email,
         phone: this.auth?.user?.celular,
         domicilio: this.auth?.user?.domicilio
@@ -132,7 +136,7 @@ export default {
       const data = {
         celular: this.form.phone,
         email: this.form.email,
-        fecha_nacimiento: moment(this.form.date, 'DD/MMMM/YYYY').format('YYYY-MM-DD'),
+      //  fecha_nacimiento: moment(this.form.date, 'DD/MMMM/YYYY').format('YYYY-MM-DD'),
         domicilio: this.form.domicilio
       };
       this.loading = true;
