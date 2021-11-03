@@ -13,7 +13,7 @@
         <div class="content-form mt-2">
           <el-form ref="form" :model="form" :rules="rules" class="text-center">
             <el-form-item label="Usuario" prop="user">
-              <el-input type="text" v-model="form.user"></el-input>
+              <el-input type="text" v-model="form.user" placeholder="nombreddmmyyyy"></el-input>
             </el-form-item>
             <el-form-item label="Contraseña" prop="password">
               <el-input type="password" autocomplete="off" v-model="form.password"></el-input>
