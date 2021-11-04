@@ -115,7 +115,7 @@ export default {
     icon: {
       iconSrc: './static/icon.png', 
       cacheDir: './static/icons',
-      purpose: 'maskable',
+      purpose: ['any', 'maskable'],
       sizes: [48, 64, 72, 96, 120, 128, 144, 152, 180, 192, 256, 384, 512]
     },
   },
