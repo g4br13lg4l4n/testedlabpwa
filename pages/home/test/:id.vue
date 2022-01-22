@@ -3,11 +3,11 @@
         <div v-if="test.status === 'success' && test.data.solicitudesEstudio[0].liberado">
             <div class="flex justify-between items-center">
                 <el-button round size="small" @click="$router.push('/home')">
-                    <i class="el-icon-back"></i> Regresar
+                    <em class="el-icon-back"></em> Regresar
                 </el-button>
                 <el-button round size="small" class="round-primary">
                     <a :href="test.data.urlPdfResultados" download target="_blank">
-                        <i class="el-icon-download"></i> Descargar
+                        <em class="el-icon-download"></em> Descargar
                     </a>
                 </el-button>
             </div>
@@ -33,70 +33,85 @@
                     </el-col>
                 </el-row>
             </div>
-            <el-divider></el-divider>
-            <h2 class="sub-title my-8">Datos del examen</h2>
-            <el-row class="mt-2.5">
-                <el-col :span="12" :xs="24" :sm="16" :lg="6">
-                    <img :src="test.data.urlQR" alt="QR" width="90%" class="m0-auto">
-                </el-col>
-                <el-col :span="12" :xs="24" :sm="24" :lg="18">
-                    <p class="sub-title mb-1">{{ test.data.solicitudesEstudio[0].nombreEstudio }}</p>
-                    <el-row>
-                        <el-col :span="12" :xs="24" :sm="6" :lg="8">
-                            <p class="text-gray mb-1.5">Resultado:</p>
-                            <p class="sub-title">{{ test.data.solicitudesEstudio[0].resultados[0].resultado }}</p>
-                        </el-col>
-                        <el-col :span="12" :xs="24" :sm="6" :lg="8">
-                            <p class="text-gray mb-1.5">Valor de referencia:</p>
-                            <p class="sub-title">{{ test.data.solicitudesEstudio[0].resultados[0].textoReferencia }}</p>
-                        </el-col>
-                    </el-row>
-                    <el-row>
-                        <el-col :span="24">
-                            <p class="text-gray mb-1.5 mt-1">Método:</p>
-                            <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMetodo }}</p>
-                        </el-col>
-                        <el-col :span="24">
-                            <p class="text-gray mb-1.5 mt-1">Tipo de muestra:</p>
-                            <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMuestra }}</p>
-                        </el-col>
-                        <el-col :span="24" class="mt-1 mb-1.5 sub-title alert-time">
-                            *Reporte con validez oficial por las siguientes 72 horas a partir de la fecha de emisión.
-                        </el-col>
-                    </el-row>
-                </el-col>
-            </el-row>
-            <el-divider></el-divider>
-            <p class="sub-title my-8">Anexo</p>
-            <div>
-                <img 
-                v-if="test.data.solicitudesEstudio[0].resultados[0].documentos.length > 0" 
-                :src="test.data.solicitudesEstudio[0].resultados[0].documentos[0].documento" 
-                alt="anexo"
-                class="w-64">
-                <p class="my-8">Prueba utilizada: {{ test.data.solicitudesEstudio[0].pruebaUtilizada }}</p>
-                <p class="text-gray mb-1.5">
-                    <strong>Nota:</strong>
-                </p>
-                <p class="text-gray">{{ test.data.solicitudesEstudio[0].nota }}</p>
-                <div class="mt-3">
-                    <el-row :gutter="20">
-                        <el-col :span="12" :xs="24" :sm="12" :lg="12" class="card-white">
-                            <p class="sub-title mb-1.5">{{ test.data.responsableSanitario.nombre }}</p>
-                            <p class="text-gray mb-1.5">Responsable Sanitario</p>
-                            <p class="text-gray mb-1.5">{{ test.data.responsableSanitario.escuelaProcedencia }}</p>
+            <section v-if="test.data.tipo_estudio_documento === 0">
+                <el-divider></el-divider>
+                <h2 class="sub-title my-8">Datos del examen</h2>
+                <el-row class="mt-2.5">
+                    <el-col :span="12" :xs="24" :sm="16" :lg="6">
+                        <img :src="test.data.urlQR" alt="QR" width="90%" class="m0-auto">
+                    </el-col>
+                    <el-col :span="12" :xs="24" :sm="24" :lg="18">
+                        <p class="sub-title mb-1">{{ test.data.solicitudesEstudio[0].nombreEstudio }}</p>
+                        <el-row>
+                            <el-col :span="12" :xs="24" :sm="6" :lg="8">
+                                <p class="text-gray mb-1.5">Resultado:</p>
+                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].resultados[0].resultado }}</p>
+                            </el-col>
+                            <el-col :span="12" :xs="24" :sm="6" :lg="8">
+                                <p class="text-gray mb-1.5">Valor de referencia:</p>
+                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].resultados[0].textoReferencia }}</p>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <p class="text-gray mb-1.5 mt-1">Método:</p>
+                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMetodo }}</p>
+                            </el-col>
+                            <el-col :span="24">
+                                <p class="text-gray mb-1.5 mt-1">Tipo de muestra:</p>
+                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMuestra }}</p>
+                            </el-col>
+                            <el-col :span="24" class="mt-1 mb-1.5 sub-title alert-time">
+                                *Reporte con validez oficial por las siguientes 72 horas a partir de la fecha de emisión.
+                            </el-col>
+                        </el-row>
+                    </el-col>
+                </el-row>
+                <el-divider></el-divider>
+                <p class="sub-title my-8">Anexo</p>
+                <div>
+                    <div v-if="anexoImage">
+                        <img 
+                            v-if="test.data.solicitudesEstudio[0].resultados[0].documentos.length > 0" 
+                            :src="test.data.solicitudesEstudio[0].resultados[0].documentos[0].documento" 
+                            alt="anexo"
+                            class="w-64">
+                            <p class="my-8">Prueba utilizada: {{ test.data.solicitudesEstudio[0].pruebaUtilizada }}</p>
                             <p class="text-gray mb-1.5">
-                                <strong>{{ test.data.responsableSanitario.cedula }}</strong>
+                                <strong>Nota:</strong>
                             </p>
-                        </el-col>
-                        <el-col :span="12" :xs="24" :sm="12" :lg="12" class="card-white">
-                            <p class="sub-title mb-1.5">Datos de la empresa</p>
-                            <p class="text-gray mb-1.5">{{ test.data.datosEmpresa.nombre }}</p>
-                            <p class="text-gray mb-1.5">{{ test.data.datosEmpresa.direccion }}</p>
-                        </el-col>
-                    </el-row>
+                            <p class="text-gray">{{ test.data.solicitudesEstudio[0].nota }}</p>
+                    </div>
+                    <div v-else>
+                        <el-button round size="small" class="round-primary">
+                            <a :href="test.data.solicitudesEstudio[0].resultados[0].documentos[0].documento" download target="_blank">
+                                <em class="el-icon-download"></em> Descargar Anexo
+                            </a>
+                        </el-button>
+                    </div>
+
+                    <div class="mt-3">
+                        <el-row :gutter="20">
+                            <el-col :span="12" :xs="24" :sm="12" :lg="12" class="card-white">
+                                <p class="sub-title mb-1.5">{{ test.data.responsableSanitario.nombre }}</p>
+                                <p class="text-gray mb-1.5">Responsable Sanitario</p>
+                                <p class="text-gray mb-1.5">{{ test.data.responsableSanitario.escuelaProcedencia }}</p>
+                                <p class="text-gray mb-1.5">
+                                    <strong>{{ test.data.responsableSanitario.cedula }}</strong>
+                                </p>
+                            </el-col>
+                            <el-col :span="12" :xs="24" :sm="12" :lg="12" class="card-white">
+                                <p class="sub-title mb-1.5">Datos de la empresa</p>
+                                <p class="text-gray mb-1.5">{{ test.data.datosEmpresa.nombre }}</p>
+                                <p class="text-gray mb-1.5">{{ test.data.datosEmpresa.direccion }}</p>
+                            </el-col>
+                        </el-row>
+                    </div>
                 </div>
-            </div>
+            </section>
+            <section v-else>
+                <pdf :src="test.data.urlPdfResultados"></pdf>
+            </section>
         </div>
         <div v-else>
             <div>
@@ -107,13 +122,23 @@
 </template>
 <script>
 import { mapGetters } from 'vuex';
+import pdf from 'vue-pdf';
 export default {
     layout: "main",
+    components: {
+        pdf
+    },
     computed: {
-    ...mapGetters(['auth', 'test']),
+        ...mapGetters(['auth', 'test']),
+        anexoImage: function () {
+            if(this.test?.data?.solicitudesEstudio[0]?.resultados[0]?.documentos[0]?.documento) {
+                return this.test?.data?.solicitudesEstudio[0]?.resultados[0]?.documentos[0]?.documento.includes('.pdf') ? false : true;
+            } else {
+                return true;
+            }
+        }
   },
     mounted() {
-        console.log(this.$route?.params?.id, this.auth?.user?.cvePaciente)
         if(this.$route?.params?.id && this.auth?.user?.cvePaciente) {
             const data = {
                 cvePaciente: this.auth.user.cvePaciente, 

@@ -14,7 +14,8 @@
     "core-js": "^3.16.4",
     "element-ui": "^2.15.5",
     "moment": "^2.29.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "vue-pdf": "^4.3.0"
   },
   "devDependencies": {
     "@nuxtjs/pwa": "^3.3.5",
