@@ -7,7 +7,7 @@
       </p>
       <p class="category-test">Descripción: {{ test.descripcion }}</p>
     </div>
-    <nuxt-link :to="'home/test/' +  test.folio" class="bg-white row-select" v-if="type === 'complated'">
+    <nuxt-link :to="'home/test/' +  test.folio + '?cveEstudio=' + test.cveEstudio" class="bg-white row-select" v-if="type === 'complated'">
       <img src="../assets/img/row.svg" alt="row" />
     </nuxt-link>
   </div>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="test.status === 'success' && test.data.solicitudesEstudio[0].liberado">
+        <div v-if="test.status === 'success' && test.data.solicitudesEstudio[0].liberado && filterTest">
             <div class="flex justify-between items-center">
                 <el-button round size="small" @click="$router.push('/home')">
                     <em class="el-icon-back"></em> Regresar
@@ -29,11 +29,11 @@
                     </el-col>
                     <el-col :span="12" :xs="12" :sm="12" :lg="6">
                         <p class="text-gray mb-1.5">Fecha de reporte:</p>
-                        <p class="sub-title">{{ test.data.solicitudesEstudio[0].fechaReporte | date }}</p>
+                        <p class="sub-title">{{ filterTest.fechaReporte | date }}</p>
                     </el-col>
                 </el-row>
             </div>
-            <section v-if="test.data.tipo_estudio_documento === 0">
+            <section v-if="filterTest.tipoEstudioDocumento === 0">
                 <el-divider></el-divider>
                 <h2 class="sub-title my-8">Datos del examen</h2>
                 <el-row class="mt-2.5">
@@ -41,25 +41,25 @@
                         <img :src="test.data.urlQR" alt="QR" width="90%" class="m0-auto">
                     </el-col>
                     <el-col :span="12" :xs="24" :sm="24" :lg="18">
-                        <p class="sub-title mb-1">{{ test.data.solicitudesEstudio[0].nombreEstudio }}</p>
+                        <p class="sub-title mb-1">{{ filterTest.nombreEstudio }}</p>
                         <el-row>
                             <el-col :span="12" :xs="24" :sm="6" :lg="8">
                                 <p class="text-gray mb-1.5">Resultado:</p>
-                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].resultados[0].resultado }}</p>
+                                <p class="sub-title">{{ filterTest.resultados[0].resultado }}</p>
                             </el-col>
                             <el-col :span="12" :xs="24" :sm="6" :lg="8">
                                 <p class="text-gray mb-1.5">Valor de referencia:</p>
-                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].resultados[0].textoReferencia }}</p>
+                                <p class="sub-title">{{ filterTest.resultados[0].textoReferencia }}</p>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="24">
                                 <p class="text-gray mb-1.5 mt-1">Método:</p>
-                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMetodo }}</p>
+                                <p class="sub-title">{{ filterTest.tipoMetodo }}</p>
                             </el-col>
                             <el-col :span="24">
                                 <p class="text-gray mb-1.5 mt-1">Tipo de muestra:</p>
-                                <p class="sub-title">{{ test.data.solicitudesEstudio[0].tipoMuestra }}</p>
+                                <p class="sub-title">{{ filterTest.tipoMuestra }}</p>
                             </el-col>
                             <el-col :span="24" class="mt-1 mb-1.5 sub-title alert-time">
                                 *Reporte con validez oficial por las siguientes 72 horas a partir de la fecha de emisión.
@@ -72,19 +72,19 @@
                 <div>
                     <div v-if="anexoImage">
                         <img 
-                            v-if="test.data.solicitudesEstudio[0].resultados[0].documentos.length > 0" 
-                            :src="test.data.solicitudesEstudio[0].resultados[0].documentos[0].documento" 
+                            v-if="filterTest.resultados[0].documentos.length > 0" 
+                            :src="filterTest.resultados[0].documentos[0].documento" 
                             alt="anexo"
                             class="w-64">
-                            <p class="my-8">Prueba utilizada: {{ test.data.solicitudesEstudio[0].pruebaUtilizada }}</p>
+                            <p class="my-8">Prueba utilizada: {{ filterTest.pruebaUtilizada }}</p>
                             <p class="text-gray mb-1.5">
                                 <strong>Nota:</strong>
                             </p>
-                            <p class="text-gray">{{ test.data.solicitudesEstudio[0].nota }}</p>
+                            <p class="text-gray">{{ filterTest.nota }}</p>
                     </div>
                     <div v-else>
                         <el-button round size="small" class="round-primary">
-                            <a :href="test.data.solicitudesEstudio[0].resultados[0].documentos[0].documento" download target="_blank">
+                            <a :href="filterTest.resultados[0].documentos[0].documento" download target="_blank">
                                 <em class="el-icon-download"></em> Descargar Anexo
                             </a>
                         </el-button>
@@ -110,12 +110,43 @@
                 </div>
             </section>
             <section v-else>
-                <pdf :src="test.data.urlPdfResultados"></pdf>
+                <h2 class="sub-title my-8">Datos del examen</h2>
+                <el-row class="mt-2.5">
+                    <el-col :span="12" :xs="24" :sm="24" :lg="24">
+                        <el-row>
+                            <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                                <p class="text-gray mb-1.5">Estudio:</p>
+                                <p class="sub-title mb-1">{{ filterTest.nombreEstudio }}</p>
+                            </el-col>
+                            <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                                <p class="text-gray mb-1.5">Resultado:</p>
+                                <p class="sub-title">{{ filterTest.resultados[0].resultado }}</p>
+                            </el-col>
+                            <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                                <p class="text-gray mb-1.5 mt-1">Método:</p>
+                                <p class="sub-title">{{ filterTest.tipoMetodo }}</p>
+                            </el-col>
+                            <el-col :span="12" :xs="24" :sm="6" :lg="6">
+                                <p class="text-gray mb-1.5 mt-1">Tipo de muestra:</p>
+                                <p class="sub-title">{{ filterTest.tipoMuestra }}</p>
+                            </el-col>
+                        </el-row>
+                    </el-col>
+                </el-row>
+                <br />
+	            <div class="pdf-wrapper">
+                    <pdf
+                        v-for="i in numPages"
+                        :page="i"
+                        :key="i"
+                        :src="loadPaginates">
+                    </pdf>
+                </div>
             </section>
         </div>
         <div v-else>
             <div>
-                <el-button round size="small" @click="$router.push('/home')"><i class="el-icon-back"></i> Regresar</el-button>
+                <el-button round size="small" @click="$router.push('/home')"><em class="el-icon-back"></em> Regresar</el-button>
             </div>
         </div>
     </div>
@@ -128,6 +159,11 @@ export default {
     components: {
         pdf
     },
+    data() {
+        return {
+            numPages: 2
+        }
+    },
     computed: {
         ...mapGetters(['auth', 'test']),
         anexoImage: function () {
@@ -136,6 +172,20 @@ export default {
             } else {
                 return true;
             }
+        },
+        loadPaginates: function () {
+            if(this.filterTest?.tipoEstudioDocumento) {
+                const pdfEjemplo = `data:application/pdf;base64,${this.filterTest?.resultados[0]?.documentos[0]?.pdfBase64}`
+                return pdf.createLoadingTask(pdfEjemplo);
+            }
+        },
+        filterTest: function () {
+            if(this.test?.data && this.test?.data?.solicitudesEstudio && this.$route?.params?.id && this.$route?.query.cveEstudio) {
+                return  this.test.data.solicitudesEstudio.find(row => {
+                    return row.cveEstudio === this.$route?.query.cveEstudio;
+                });
+            }
+            return false;
         }
   },
     mounted() {
@@ -146,7 +196,10 @@ export default {
             };
             this.$store.dispatch('get_test', data);
         }
-    }
+        this.loadPaginates?.promise.then(pdf => {
+			this.numPages = pdf.numPages;
+		});
+    },
 }
 </script>
 <style>
@@ -158,5 +211,12 @@ export default {
     }
     .alert-time {
         color: #0360AD;
+    }
+    .pdf-wrapper {
+        width: calc(100% - 10px);
+        padding: 10px;
+        background: #ccc;
+        height: 100vh;
+        overflow-y: scroll;
     }
 </style>
