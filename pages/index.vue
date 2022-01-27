@@ -19,7 +19,7 @@
               <el-input type="password" autocomplete="off" v-model="form.password"></el-input>
             </el-form-item>
             <el-form-item label=" " prop="terms" class="mb-2">
-              <el-checkbox v-model="form.terms">Acepto términos y condiciones</el-checkbox>
+              <el-checkbox v-model="form.terms">Acepto términos y condiciones.</el-checkbox>
             </el-form-item>
             <el-button class="btn-blue rounded-full" @click="submitForm('form')" round>Iniciar sesión</el-button>
           </el-form>
